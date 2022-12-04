@@ -5,13 +5,17 @@ Copyright © 2022 KAI CHU CHUNG <cage.chung@gmail.com>
 package cmd
 
 import (
-	"log"
+	"errors"
 	"os"
 	"os/exec"
+	"path/filepath"
 
 	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+
+	"github.com/cage1016/alfred-targets2here/alfred"
 )
 
 const updateJobName = "checkForUpdate"
@@ -19,14 +23,22 @@ const updateJobName = "checkForUpdate"
 var (
 	repo = "cage1016/alfred-targets2here"
 	wf   *aw.Workflow
+	av   = aw.NewArgVars()
 )
+
+func ErrorHandle(err error) {
+	av.Var("error", err.Error())
+	if err := av.Send(); err != nil {
+		wf.Fatalf("failed to send args to Alfred: %v", err)
+	}
+}
 
 func CheckForUpdate() {
 	if wf.UpdateCheckDue() && !wf.IsRunning(updateJobName) {
-		log.Println("Running update check in background...")
+		logrus.Info("Running update check in background...")
 		cmd := exec.Command(os.Args[0], "update")
 		if err := wf.RunInBackground(updateJobName, cmd); err != nil {
-			log.Printf("Error starting update check: %s", err)
+			logrus.Errorf("Error starting update check: %s", err)
 		}
 	}
 
@@ -54,9 +66,12 @@ var rootCmd = &cobra.Command{
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	wf.Run(func() {
+		if _, err := os.Stat(filepath.Join(wf.DataDir(), "targets.json")); errors.Is(err, os.ErrNotExist) {
+			alfred.StoreOngoingTargets(wf, alfred.Targets{})
+		}
+
 		if err := rootCmd.Execute(); err != nil {
-			log.Println(err)
-			os.Exit(1)
+			logrus.Fatal(err)
 		}
 	})
 }
@@ -64,4 +79,10 @@ func Execute() {
 func init() {
 	wf = aw.New(update.GitHub(repo), aw.HelpURL(repo+"/issues"))
 	wf.Args() // magic for "workflow:update"
+
+	if alfred.GetDebug(wf) {
+		logrus.SetLevel(logrus.DebugLevel)
+	} else {
+		logrus.SetLevel(logrus.InfoLevel)
+	}
 }
