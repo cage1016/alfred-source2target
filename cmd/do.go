@@ -5,17 +5,16 @@ Copyright © 2022 KAI CHU CHUNG <cage.chung@gmail.com>
 package cmd
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"io"
-	"os/exec"
 	"path/filepath"
 	"strings"
 
 	aw "github.com/deanishe/awgo"
-	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+
+	"github.com/cage1016/alfred-targets2here/alfred"
+	"github.com/cage1016/alfred-targets2here/lib"
 )
 
 // doCmd represents the do command
@@ -36,49 +35,16 @@ func ArgJSONBuilder(op string, files []string, base string) string {
 	return string(j)
 }
 
-func worker(done chan struct{}, r io.ReadCloser, fn func(string)) {
-	scanner := bufio.NewScanner(r)
-	go func() {
-		for scanner.Scan() {
-			fn(scanner.Text())
-		}
-		done <- struct{}{}
-	}()
-}
-
 func runDoCmd(ccmd *cobra.Command, args []string) {
 	target, _ := ccmd.Flags().GetString("target")
 
-	flags := []string{}
-	for _, arg := range strings.Split(args[0], " ") {
-		if arg != "" {
-			flags = append(flags, arg)
-		}
-	}
-	flags = append(flags, "-t", "f", "-X", "ls", "-lt")
-
-	cmd := exec.Command("fd", flags...)
-	cmd.Dir = target
-	logrus.Debugf("fd: %s", cmd)
-
-	r, _ := cmd.StdoutPipe()
-	cmd.Stderr = cmd.Stdout
-
-	documents := []string{}
-	done := make(chan struct{})
-	worker(done, r, func(line string) {
-		logrus.Debugf("line: %s", line)
-		if strings.HasPrefix(line, "-") {
-			x := strings.Split(line, "./")
-			documents = append(documents, x[1])
-		} else {
-			documents = append(documents, line)
-		}
+	documents := lib.FdExecute(lib.DoConfig{
+		Target:    target,
+		Arg:       args[0],
+		Type:      alfred.GetType(wf),
+		Exclude:   alfred.GetExclude(wf),
+		ExecBatch: alfred.GetExecBatch(wf),
 	})
-
-	cmd.Start()
-	<-done
-	cmd.Wait()
 
 	if len(documents) > 0 {
 		if !strings.HasPrefix(documents[0], "error") {
