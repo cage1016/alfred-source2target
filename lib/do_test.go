@@ -37,12 +37,12 @@ func TestFdExecute(t *testing.T) {
 						ExecBatch: "-X ls -lt",
 					}: []string{
 						"icon-svg.pdf",
-						"apple-touch-icon.png",
 						"folder1/f.txt",
 						"folder1/e.txt",
 						"folder1/d.txt",
 						"c.txt",
 						"b.txt",
+						"apple-touch-icon.png",
 						"a.txt",
 					},
 				},
