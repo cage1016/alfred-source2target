@@ -32,6 +32,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2A42D6EB-7B74-4024-95B2-EB464C577F29</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>310F5A45-E71B-417A-95C1-7AF38636B5F7</key>
 		<array>
 			<dict>
@@ -45,11 +58,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>34EC05A2-8452-4282-8317-6271DADC259F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3DBFE9BA-9E91-4B20-8A41-4A27566EFEE0</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>11861E15-A756-4EE8-B4E8-83BD5978497B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>61655438-45C9-48F4-907D-21EEFA1C8B90</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2A42D6EB-7B74-4024-95B2-EB464C577F29</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -199,6 +238,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6DCD6282-DB37-4D3C-A243-69F1A02E75C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -801,8 +853,6 @@ function run([argv]) {
     }
 
     ACTIONS[op](files);
-
-    App.doShellScript(`afplay /System/Library/Sounds/Funk.aiff`);
 }</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -837,11 +887,144 @@ function run([argv]) {
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Copy2Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>61655438-45C9-48F4-907D-21EEFA1C8B90</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env osascript -l JavaScript
+
+function run([argv]) {
+  ObjC.import('stdlib')
+
+  const op = $.getenv('op')
+  const file = $.getenv('file')
+
+  const App = Application.currentApplication();
+  App.includeStandardAdditions = true;
+
+  const FinderPath = () =&gt;
+    decodeURI(
+      Application('Finder')
+        .insertionLocation()
+        .url()
+        .replace(/^file:\/\//, ''),
+    );
+
+  const ACTIONS = {
+    move: (file) =&gt; App.doShellScript(`mv "${file}" "${FinderPath()}"`),
+    copy: (file) =&gt; App.doShellScript(`cp "${file}" "${FinderPath()}"`),
+  };
+
+  ACTIONS[op](file);
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>file</key>
+					<string>{query}</string>
+					<key>op</key>
+					<string>copy</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>2A42D6EB-7B74-4024-95B2-EB464C577F29</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Move2Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>34EC05A2-8452-4282-8317-6271DADC259F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>file</key>
+					<string>{query}</string>
+					<key>op</key>
+					<string>move</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</key>
+		<dict>
+			<key>xpos</key>
+			<real>955</real>
+			<key>ypos</key>
+			<real>755</real>
+		</dict>
 		<key>0029264A-B4F9-497A-B438-512976115187</key>
 		<dict>
 			<key>note</key>
@@ -865,6 +1048,13 @@ function run([argv]) {
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
+		<key>2A42D6EB-7B74-4024-95B2-EB464C577F29</key>
+		<dict>
+			<key>xpos</key>
+			<real>390</real>
+			<key>ypos</key>
+			<real>785</real>
+		</dict>
 		<key>2EB4A01C-C33D-4BF0-9D88-B2A8704E3EBB</key>
 		<dict>
 			<key>xpos</key>
@@ -879,6 +1069,13 @@ function run([argv]) {
 			<key>ypos</key>
 			<real>555</real>
 		</dict>
+		<key>34EC05A2-8452-4282-8317-6271DADC259F</key>
+		<dict>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>865</real>
+		</dict>
 		<key>3DBFE9BA-9E91-4B20-8A41-4A27566EFEE0</key>
 		<dict>
 			<key>xpos</key>
@@ -892,6 +1089,13 @@ function run([argv]) {
 			<real>1195</real>
 			<key>ypos</key>
 			<real>635</real>
+		</dict>
+		<key>61655438-45C9-48F4-907D-21EEFA1C8B90</key>
+		<dict>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>755</real>
 		</dict>
 		<key>65B25B8D-C286-4333-973E-043722CED8FA</key>
 		<dict>
@@ -957,6 +1161,13 @@ function run([argv]) {
 			<key>ypos</key>
 			<real>305</real>
 		</dict>
+		<key>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</key>
+		<dict>
+			<key>xpos</key>
+			<real>390</real>
+			<key>ypos</key>
+			<real>895</real>
+		</dict>
 		<key>E04C412B-486F-48B3-A294-820B47463374</key>
 		<dict>
 			<key>xpos</key>
@@ -1001,6 +1212,82 @@ function run([argv]) {
 			<string>textfield</string>
 			<key>variable</key>
 			<string>DEFAULT_QUERY</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>venv
+*.pyc
+node_module</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>6</integer>
+			</dict>
+			<key>description</key>
+			<string>Exclude files/directories that match the given glob pattern. This overrides any other ignore logic. Multiple exclude patterns can be specified.</string>
+			<key>label</key>
+			<string>Exclude</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>EXCLUDE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>-tf
+-tl</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Filter the search by type:
+    'f' or 'file':         regular files
+    'd' or 'directory':    directories
+    'l' or 'symlink':      symbolic links
+    's' or 'socket':       socket
+    'p' or 'pipe':         named pipe (FIFO)
+
+    'x' or 'executable':   executables
+    'e' or 'empty':        empty files or directories
+
+check `fd --help` for more details.</string>
+			<key>label</key>
+			<string>Type</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>TYPE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>-X ls -lt</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Exec batch</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>EXEC_BATCH</string>
 		</dict>
 	</array>
 	<key>variables</key>
