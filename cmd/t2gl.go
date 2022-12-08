@@ -12,37 +12,42 @@ import (
 	"github.com/cage1016/alfred-targets2go/alfred"
 )
 
-// t2fCmd represents the t2f command
-var t2fCmd = &cobra.Command{
-	Use:   "t2f",
-	Short: "Targets 2 find",
-	Run:   runT2fCmd,
+// t2glCmd represents the t2f command
+var t2glCmd = &cobra.Command{
+	Use:   "t2gl",
+	Short: "Targets 2 go list",
+	Run:   runT2glCmd,
 }
 
-func runT2fCmd(cmd *cobra.Command, args []string) {
+func runT2glCmd(cmd *cobra.Command, args []string) {
 	data, _ := alfred.LoadOngoingTargets(wf)
+	m, _ := cmd.Flags().GetString("mode")
 
 	for name, path := range data {
 		wi := wf.NewItem(name).
 			Subtitle(fmt.Sprintf("⌘ ,↩ Move / Copy files from '%s' to frontmost Finder", path)).
 			Valid(true).
-			Arg(path)
+			Arg(path).
+			Var("mode", m)
 
 		wi.Cmd().
 			Subtitle("↩ Enter Action menu to Add / Remove target folder").
-			Valid(true)
+			Valid(true).
+			Var("mode", m)
 	}
 
 	if len(data) == 0 {
-		wf.NewItem("ADD").
-			Subtitle("Add more target folder to configuration").
+		wf.NewItem("No any Targets available").
+			Subtitle("↩ Add more target folder to configuration").
 			Valid(true).
-			Var("action", "add")
+			Arg("").
+			Var("mode", m)
 	}
 
 	wf.SendFeedback()
 }
 
 func init() {
-	rootCmd.AddCommand(t2fCmd)
+	rootCmd.AddCommand(t2glCmd)
+	t2glCmd.PersistentFlags().StringP("mode", "m", "", "mode of action: to or go")
 }

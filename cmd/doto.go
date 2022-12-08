@@ -17,11 +17,11 @@ import (
 	"github.com/cage1016/alfred-targets2go/lib"
 )
 
-// doCmd represents the do command
-var doCmd = &cobra.Command{
-	Use:   "do",
-	Short: "A brief description of your command",
-	Run:   runDoCmd,
+// dotoCmd represents the doto command
+var dotoCmd = &cobra.Command{
+	Use:   "doto",
+	Short: "do to here",
+	Run:   runDotoCmd,
 }
 
 type Arg struct {
@@ -35,7 +35,7 @@ func ArgJSONBuilder(op string, files []string, base string) string {
 	return string(j)
 }
 
-func runDoCmd(ccmd *cobra.Command, args []string) {
+func runDotoCmd(ccmd *cobra.Command, args []string) {
 	target, _ := ccmd.Flags().GetString("target")
 
 	documents := lib.FdExecute(lib.DoConfig{
@@ -104,6 +104,6 @@ func runDoCmd(ccmd *cobra.Command, args []string) {
 }
 
 func init() {
-	rootCmd.AddCommand(doCmd)
-	doCmd.PersistentFlags().StringP("target", "", "", "target folder")
+	rootCmd.AddCommand(dotoCmd)
+	dotoCmd.PersistentFlags().StringP("target", "", "", "target folder")
 }
