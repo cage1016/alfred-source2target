@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/cage1016/alfred-targets2here/lib"
-	"github.com/cage1016/alfred-targets2here/testdata"
+	"github.com/cage1016/alfred-targets2go/lib"
+	"github.com/cage1016/alfred-targets2go/testdata"
 )
 
 func TestFdExecute(t *testing.T) {

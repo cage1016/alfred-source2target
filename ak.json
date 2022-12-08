@@ -1,18 +1,18 @@
 {
-    "go_mod_package": "github.com/cage1016/alfred-targets2here",
+    "go_mod_package": "github.com/cage1016/alfred-targets2go",
     "workflow": {
         "folder": ".workflow",
-        "name": "Targets 2 Here",
-        "description": "Copy or Move targets to Here",
+        "name": "Targets 2 go",
+        "description": "Copy or Move targets to here and go there",
         "category_comment": "category: Tools, Internet, Productivity, Uncategorised",
         "category": "",
-        "bundle_id": "com.kaichu.targets2here",
+        "bundle_id": "com.kaichu.targets2go",
         "created_by": "KAI CHU CHUNG",
-        "web_address": "https://github.com/cage1016/alfred-targets2here",
+        "web_address": "https://github.com/cage1016/alfred-targets2go",
         "version": "0.1.0"
     },
     "update": {
-        "github_repo": "https://github.com/cage1016/alfred-targets2here"
+        "github_repo": "https://github.com/cage1016/alfred-targets2go"
     },
     "license": {
         "type_comment": "support license https://github.com/nishanths/license",

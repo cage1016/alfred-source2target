@@ -13,8 +13,8 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2here/alfred"
-	"github.com/cage1016/alfred-targets2here/lib"
+	"github.com/cage1016/alfred-targets2go/alfred"
+	"github.com/cage1016/alfred-targets2go/lib"
 )
 
 // doCmd represents the do command
@@ -62,6 +62,7 @@ func runDoCmd(ccmd *cobra.Command, args []string) {
 						Value: fdoc,
 						Type:  "fileicon",
 					}).
+					ActionForType("file", fdoc).
 					Arg(ArgJSONBuilder("move", documents[:i+1], target))
 
 				wi.Cmd().

@@ -10,7 +10,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2here/alfred"
+	"github.com/cage1016/alfred-targets2go/alfred"
 )
 
 // maCmd represents the ma command

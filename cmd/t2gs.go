@@ -9,17 +9,17 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2here/alfred"
+	"github.com/cage1016/alfred-targets2go/alfred"
 )
 
-// t2hsCmd represents the t2hs command
-var t2hsCmd = &cobra.Command{
-	Use:   "t2hs",
-	Short: "A brief description of your command",
-	Run:   runt2hsCmd,
+// t2gsCmd represents the t2gs command
+var t2gsCmd = &cobra.Command{
+	Use:   "t2gs",
+	Short: "Targets 2 go settings",
+	Run:   runt2gsCmd,
 }
 
-func runt2hsCmd(cmd *cobra.Command, args []string) {
+func runt2gsCmd(cmd *cobra.Command, args []string) {
 	data, _ := alfred.LoadOngoingTargets(wf)
 
 	wf.NewItem("BACK").
@@ -44,5 +44,5 @@ func runt2hsCmd(cmd *cobra.Command, args []string) {
 }
 
 func init() {
-	rootCmd.AddCommand(t2hsCmd)
+	rootCmd.AddCommand(t2gsCmd)
 }

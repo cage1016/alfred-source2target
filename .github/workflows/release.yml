@@ -52,7 +52,7 @@ jobs:
           cat <<EOF >> gon.json
           {
               "source" : [".workflow/exe"],
-              "bundle_id" : "com.kaichu.targets2here",
+              "bundle_id" : "com.kaichu.targets2go",
               "sign" :{
                   "application_identity" : "Developer ID Application: KAI CHU CHUNG"
               }
@@ -74,7 +74,7 @@ jobs:
           {
               "notarize": [{
                   "path": "${PWD}/Targets2Here-${{ env.tag }}.alfredworkflow.zip",
-                  "bundle_id": "com.kaichu.targets2here",
+                  "bundle_id": "com.kaichu.targets2go",
                   "staple": false
               }]
           }

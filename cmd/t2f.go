@@ -9,27 +9,27 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2here/alfred"
+	"github.com/cage1016/alfred-targets2go/alfred"
 )
 
-// t2hCmd represents the t2h command
-var t2hCmd = &cobra.Command{
-	Use:   "t2h",
-	Short: "A brief description of your command",
-	Run:   runT2hCmd,
+// t2fCmd represents the t2f command
+var t2fCmd = &cobra.Command{
+	Use:   "t2f",
+	Short: "Targets 2 find",
+	Run:   runT2fCmd,
 }
 
-func runT2hCmd(cmd *cobra.Command, args []string) {
+func runT2fCmd(cmd *cobra.Command, args []string) {
 	data, _ := alfred.LoadOngoingTargets(wf)
 
 	for name, path := range data {
 		wi := wf.NewItem(name).
-			Subtitle(fmt.Sprintf("↩ Move / Copy files from '%s' folder", path)).
+			Subtitle(fmt.Sprintf("⌘ ,↩ Move / Copy files from '%s' to frontmost Finder", path)).
 			Valid(true).
 			Arg(path)
 
 		wi.Cmd().
-			Subtitle("↩ Enter Action menu to add / remove target folder").
+			Subtitle("↩ Enter Action menu to Add / Remove target folder").
 			Valid(true)
 	}
 
@@ -44,5 +44,5 @@ func runT2hCmd(cmd *cobra.Command, args []string) {
 }
 
 func init() {
-	rootCmd.AddCommand(t2hCmd)
+	rootCmd.AddCommand(t2fCmd)
 }

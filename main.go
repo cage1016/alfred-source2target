@@ -6,7 +6,7 @@ package main
 import (
 	_ "github.com/joho/godotenv/autoload"
 
-	"github.com/cage1016/alfred-targets2here/cmd"
+	"github.com/cage1016/alfred-targets2go/cmd"
 )
 
 func main() {

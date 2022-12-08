@@ -15,7 +15,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2here/alfred"
+	"github.com/cage1016/alfred-targets2go/alfred"
 )
 
 const updateJobName = "checkForUpdate"
@@ -54,8 +54,8 @@ func CheckForUpdate() {
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "Targets 2 Here",
-	Short: "Copy or Move targets to Here",
+	Use:   "Targets 2 go",
+	Short: "Copy or Move targets to here and go there",
 	Run: func(cmd *cobra.Command, args []string) {
 		CheckForUpdate()
 		wf.SendFeedback()

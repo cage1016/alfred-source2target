@@ -13,7 +13,7 @@ import (
 // updateCmd represents the update command
 var updateCmd = &cobra.Command{
 	Use:   "update",
-	Short: "Update Targets 2 Here",
+	Short: "Update Targets 2 go",
 	Run: func(cmd *cobra.Command, args []string) {
 		wf.Configure(aw.TextErrors(true))
 		logrus.Info("Checking for updates...")
