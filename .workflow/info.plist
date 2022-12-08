@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.kaichu.targets2go</string>
+	<string>com.kaichu.source2target</string>
 	<key>connections</key>
 	<dict>
 		<key>0029264A-B4F9-497A-B438-512976115187</key>
@@ -547,7 +547,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Targets 2 go</string>
+	<string>Source 2 Target</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -574,15 +574,15 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Do To Here</string>
+				<string>Do Come Finder</string>
 				<key>script</key>
-				<string>./exe doto --target "${target}" -- "$1"</string>
+				<string>./exe docome --source "${source}" -- "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Do To Here</string>
+				<string>Do Come Finder</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -621,7 +621,7 @@
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>target</key>
+					<key>source</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
@@ -714,7 +714,7 @@ function run([argv]) {
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Targets 2 go</string>
+				<string>Source 2 Target</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -746,7 +746,7 @@ function run([argv]) {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>tf</string>
+				<string>sf</string>
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
@@ -776,7 +776,7 @@ function run([argv]) {
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
-						<string>target valid</string>
+						<string>source valid</string>
 						<key>uid</key>
 						<string>4B78864D-2AFF-46BB-967E-D85B3FF6DDCD</string>
 					</dict>
@@ -797,7 +797,7 @@ function run([argv]) {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>t2f</string>
+				<string>scf</string>
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
@@ -818,7 +818,7 @@ function run([argv]) {
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
-				<string>t2f</string>
+				<string>scf</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
@@ -843,7 +843,7 @@ function run([argv]) {
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>t2f</string>
+				<string>scf</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -853,15 +853,15 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Targets 2 find</string>
+				<string>Source come find</string>
 				<key>script</key>
-				<string>./exe t2gl --mode to -- "$1"</string>
+				<string>./exe scl --mode come -- "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Targets 2 find</string>
+				<string>Source come find</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -900,7 +900,7 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Targets 2 go Settings</string>
+				<string>Source 2 Target Settings</string>
 				<key>script</key>
 				<string>./exe t2gs "$1"</string>
 				<key>scriptargtype</key>
@@ -908,7 +908,7 @@ function run([argv]) {
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Targets 2 go Settings</string>
+				<string>Source 2 Target Settings</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -989,7 +989,7 @@ function run([argv]) {
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
-				<string>tf</string>
+				<string>sf</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
@@ -1051,7 +1051,7 @@ function run([argv]) {
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>tf</string>
+				<string>sf</string>
 				<key>limit</key>
 				<integer>0</integer>
 				<key>runningsubtext</key>
@@ -1061,9 +1061,9 @@ function run([argv]) {
 				<key>sortmode</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string>Find and Open with Targets2Go Add</string>
+				<string>Find and Open with Source 2 Target Add</string>
 				<key>title</key>
-				<string>Find and Open with Targets2Go Add</string>
+				<string>Find and Open with Source 2 Target Add</string>
 				<key>types</key>
 				<array>
 					<string>public.folder</string>
@@ -1114,9 +1114,9 @@ function run([argv]) {
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>to</string>
+						<string>come</string>
 						<key>outputlabel</key>
-						<string>to</string>
+						<string>come</string>
 						<key>uid</key>
 						<string>A9D17258-8D67-48F7-BCB8-0F9AC29C26C4</string>
 					</dict>
@@ -1195,7 +1195,7 @@ function run([argv]) {
 					<string>public.symlink</string>
 				</array>
 				<key>name</key>
-				<string>Add Folder to Targets 2 go</string>
+				<string>Add Folder to Source 2 Target</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -1228,7 +1228,7 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Targets 2 go Settings</string>
+				<string>Source 2 Target Settings</string>
 				<key>script</key>
 				<string>./exe t2gs "$1"</string>
 				<key>scriptargtype</key>
@@ -1236,7 +1236,7 @@ function run([argv]) {
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Targets 2 go Settings</string>
+				<string>Source 2 Target Settings</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -1255,7 +1255,7 @@ function run([argv]) {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>tgf</string>
+				<string>sgf</string>
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
@@ -1286,7 +1286,7 @@ function run([argv]) {
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>tgf</string>
+				<string>sgf</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1296,15 +1296,15 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Targets go find</string>
+				<string>Source go find</string>
 				<key>script</key>
-				<string>./exe t2gl --mode go -- "$1"</string>
+				<string>./exe sgl --mode go -- "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Targets go find</string>
+				<string>Source go find</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -1325,7 +1325,7 @@ function run([argv]) {
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
-				<string>tgf</string>
+				<string>sgf</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
@@ -1398,7 +1398,7 @@ function run([argv]) {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>tf</string>
+				<string>sf</string>
 				<key>passinputasargument</key>
 				<true/>
 				<key>passvariables</key>
@@ -1452,15 +1452,15 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Do</string>
+				<string>Do go folder</string>
 				<key>script</key>
-				<string>./exe dogo --target "${target}" -- "$1"</string>
+				<string>./exe dogo --source "${source}" -- "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Do</string>
+				<string>Do go folder</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -1516,7 +1516,7 @@ function run([argv]) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>target</key>
+					<key>source</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
@@ -1595,7 +1595,7 @@ function run([targetFolder]) {
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Targets 2 go</string>
+				<string>Source 2 Target</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -2278,6 +2278,6 @@ check `fd --help` for more details.</string>
 	<key>version</key>
 	<string>0.1.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/cage1016/alfred-targets2go</string>
+	<string>https://github.com/cage1016/alfred-source2target</string>
 </dict>
 </plist>

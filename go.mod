@@ -1,4 +1,4 @@
-module github.com/cage1016/alfred-targets2go
+module github.com/cage1016/alfred-source2target
 
 go 1.18
 

@@ -12,8 +12,8 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2go/alfred"
-	"github.com/cage1016/alfred-targets2go/lib"
+	"github.com/cage1016/alfred-source2target/alfred"
+	"github.com/cage1016/alfred-source2target/lib"
 )
 
 // dotoCmd represents the doto command
@@ -24,10 +24,10 @@ var dogoCmd = &cobra.Command{
 }
 
 func runDogoCmd(ccmd *cobra.Command, args []string) {
-	target, _ := ccmd.Flags().GetString("target")
+	source, _ := ccmd.Flags().GetString("source")
 
 	documents := lib.FdExecute(lib.DoConfig{
-		Target:    target,
+		Source:    source,
 		Arg:       args[0],
 		Type:      alfred.GetType(wf),
 		Exclude:   alfred.GetExclude(wf),
@@ -41,9 +41,9 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 					continue
 				}
 
-				fdoc := filepath.Join(target, doc)
+				fdoc := filepath.Join(source, doc)
 				wf.NewItem(fmt.Sprintf("%d - %s", i, doc)).
-					Subtitle("Press return to move recent files up to this file into the current Finder location.").
+					Subtitle("Press return to move recent files up to this file into target folder.").
 					Quicklook(fdoc).
 					Valid(true).
 					Icon(&aw.Icon{
@@ -51,20 +51,20 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 						Type:  "fileicon",
 					}).
 					ActionForType("file", fdoc).
-					// Arg(ArgJSONBuilder("move", documents[:i+1], target))
+					Arg(ArgJSONBuilder("move", documents[:i+1], source))
 
 				// wi.Cmd().
-				// 	Subtitle("Press return to move only this file into the current Finder location.").
+				// 	Subtitle("Press return to move only this file into target folder.").
 				// 	Valid(true).
 				// 	Arg(ArgJSONBuilder("move", []string{doc}, target))
 
 				// wi.Alt().
-				// 	Subtitle("Press return to copy recent files up to this file into the current Finder location.").
+				// 	Subtitle("Press return to copy recent files up to this file into target folder.").
 				// 	Valid(true).
 				// 	Arg(ArgJSONBuilder("copy", documents[:i+1], target))
 
 				// wi.NewModifier("alt", "cmd").
-				// 	Subtitle("Press return to copy only this file into the current Finder location.").
+				// 	Subtitle("Press return to copy only this file into target folder.").
 				// 	Valid(true).
 				// 	Arg(ArgJSONBuilder("copy", []string{doc}, target))
 
@@ -93,5 +93,5 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 
 func init() {
 	rootCmd.AddCommand(dogoCmd)
-	dogoCmd.PersistentFlags().StringP("target", "", "", "target folder")
+	dogoCmd.PersistentFlags().StringP("source", "", "", "source folder")
 }

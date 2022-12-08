@@ -15,7 +15,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2go/alfred"
+	"github.com/cage1016/alfred-source2target/alfred"
 )
 
 const updateJobName = "checkForUpdate"
@@ -54,7 +54,7 @@ func CheckForUpdate() {
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "Targets 2 go",
+	Use:   "Source 2 Target",
 	Short: "Copy or Move targets to here and go there",
 	Run: func(cmd *cobra.Command, args []string) {
 		CheckForUpdate()
@@ -67,7 +67,7 @@ var rootCmd = &cobra.Command{
 func Execute() {
 	wf.Run(func() {
 		if _, err := os.Stat(filepath.Join(wf.DataDir(), "targets.json")); errors.Is(err, os.ErrNotExist) {
-			alfred.StoreOngoingTargets(wf, alfred.Targets{})
+			alfred.StoreOngoingSources(wf, alfred.Sources{})
 		}
 
 		if err := rootCmd.Execute(); err != nil {

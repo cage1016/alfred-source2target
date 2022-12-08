@@ -13,15 +13,15 @@ import (
 	aw "github.com/deanishe/awgo"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2go/alfred"
-	"github.com/cage1016/alfred-targets2go/lib"
+	"github.com/cage1016/alfred-source2target/alfred"
+	"github.com/cage1016/alfred-source2target/lib"
 )
 
-// dotoCmd represents the doto command
-var dotoCmd = &cobra.Command{
-	Use:   "doto",
-	Short: "do to here",
-	Run:   runDotoCmd,
+// docomeCmd represents the docome command
+var docomeCmd = &cobra.Command{
+	Use:   "docome",
+	Short: "do come here",
+	Run:   runDocomeCmd,
 }
 
 type Arg struct {
@@ -35,11 +35,11 @@ func ArgJSONBuilder(op string, files []string, base string) string {
 	return string(j)
 }
 
-func runDotoCmd(ccmd *cobra.Command, args []string) {
-	target, _ := ccmd.Flags().GetString("target")
+func runDocomeCmd(ccmd *cobra.Command, args []string) {
+	source, _ := ccmd.Flags().GetString("source")
 
 	documents := lib.FdExecute(lib.DoConfig{
-		Target:    target,
+		Source:    source,
 		Arg:       args[0],
 		Type:      alfred.GetType(wf),
 		Exclude:   alfred.GetExclude(wf),
@@ -53,7 +53,7 @@ func runDotoCmd(ccmd *cobra.Command, args []string) {
 					continue
 				}
 
-				fdoc := filepath.Join(target, doc)
+				fdoc := filepath.Join(source, doc)
 				wi := wf.NewItem(fmt.Sprintf("%d - %s", i, doc)).
 					Subtitle("Press return to move recent files up to this file into the current Finder location.").
 					Quicklook(fdoc).
@@ -63,32 +63,32 @@ func runDotoCmd(ccmd *cobra.Command, args []string) {
 						Type:  "fileicon",
 					}).
 					ActionForType("file", fdoc).
-					Arg(ArgJSONBuilder("move", documents[:i+1], target))
+					Arg(ArgJSONBuilder("move", documents[:i+1], source))
 
 				wi.Cmd().
 					Subtitle("Press return to move only this file into the current Finder location.").
 					Valid(true).
-					Arg(ArgJSONBuilder("move", []string{doc}, target))
+					Arg(ArgJSONBuilder("move", []string{doc}, source))
 
 				wi.Alt().
 					Subtitle("Press return to copy recent files up to this file into the current Finder location.").
 					Valid(true).
-					Arg(ArgJSONBuilder("copy", documents[:i+1], target))
+					Arg(ArgJSONBuilder("copy", documents[:i+1], source))
 
 				wi.NewModifier("alt", "cmd").
 					Subtitle("Press return to copy only this file into the current Finder location.").
 					Valid(true).
-					Arg(ArgJSONBuilder("copy", []string{doc}, target))
+					Arg(ArgJSONBuilder("copy", []string{doc}, source))
 
 				wi.Shift().
 					Subtitle("Press return to send recent files up to this file to the pasteboard.").
 					Valid(true).
-					Arg(ArgJSONBuilder("pasteboard", documents[:i+1], target))
+					Arg(ArgJSONBuilder("pasteboard", documents[:i+1], source))
 
 				wi.NewModifier("cmd", "shift").
 					Subtitle("Press return to send only this file to the pasteboard.").
 					Valid(true).
-					Arg(ArgJSONBuilder("pasteboard", []string{doc}, target))
+					Arg(ArgJSONBuilder("pasteboard", []string{doc}, source))
 
 				wi.Ctrl().
 					Subtitle("Browse in alfred").
@@ -104,6 +104,6 @@ func runDotoCmd(ccmd *cobra.Command, args []string) {
 }
 
 func init() {
-	rootCmd.AddCommand(dotoCmd)
-	dotoCmd.PersistentFlags().StringP("target", "", "", "target folder")
+	rootCmd.AddCommand(docomeCmd)
+	docomeCmd.PersistentFlags().StringP("source", "", "", "source folder")
 }

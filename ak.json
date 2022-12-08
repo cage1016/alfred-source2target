@@ -1,18 +1,18 @@
 {
-    "go_mod_package": "github.com/cage1016/alfred-targets2go",
+    "go_mod_package": "github.com/cage1016/alfred-source2target",
     "workflow": {
         "folder": ".workflow",
-        "name": "Targets 2 go",
-        "description": "Copy or Move targets to here and go there",
+        "name": "Source 2 Target",
+        "description": "Copy or Move From Source to Target",
         "category_comment": "category: Tools, Internet, Productivity, Uncategorised",
         "category": "",
-        "bundle_id": "com.kaichu.targets2go",
+        "bundle_id": "com.kaichu.source2target",
         "created_by": "KAI CHU CHUNG",
-        "web_address": "https://github.com/cage1016/alfred-targets2go",
+        "web_address": "https://github.com/cage1016/alfred-source2target",
         "version": "0.1.0"
     },
     "update": {
-        "github_repo": "https://github.com/cage1016/alfred-targets2go"
+        "github_repo": "https://github.com/cage1016/alfred-source2target"
     },
     "license": {
         "type_comment": "support license https://github.com/nishanths/license",

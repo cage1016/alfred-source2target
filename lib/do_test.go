@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/cage1016/alfred-targets2go/lib"
-	"github.com/cage1016/alfred-targets2go/testdata"
+	"github.com/cage1016/alfred-source2target/lib"
+	"github.com/cage1016/alfred-source2target/testdata"
 )
 
 func TestFdExecute(t *testing.T) {
@@ -30,7 +30,7 @@ func TestFdExecute(t *testing.T) {
 			args: args{
 				n: map[lib.DoConfig][]string{
 					lib.DoConfig{
-						Target:    testdata.Path("target"),
+						Source:    testdata.Path("target"),
 						Arg:       "",
 						Type:      "-tf",
 						Exclude:   "",
@@ -56,7 +56,7 @@ func TestFdExecute(t *testing.T) {
 			args: args{
 				n: map[lib.DoConfig][]string{
 					lib.DoConfig{
-						Target:    testdata.Path("target"),
+						Source:    testdata.Path("target"),
 						Arg:       "-e png -e pdf",
 						Type:      "-tf",
 						Exclude:   "",

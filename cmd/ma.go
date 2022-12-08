@@ -10,7 +10,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2go/alfred"
+	"github.com/cage1016/alfred-source2target/alfred"
 )
 
 // maCmd represents the ma command
@@ -21,17 +21,17 @@ var maCmd = &cobra.Command{
 }
 
 func runMaCmd(cmd *cobra.Command, args []string) {
-	data, _ := alfred.LoadOngoingTargets(wf)
+	data, _ := alfred.LoadOngoingSources(wf)
 	action, _ := cmd.Flags().GetString("action")
 	folder := filepath.Base(args[0])
 
 	switch action {
 	case "add":
 		data[folder] = args[0]
-		alfred.StoreOngoingTargets(wf, data)
+		alfred.StoreOngoingSources(wf, data)
 	case "remove":
 		delete(data, folder)
-		alfred.StoreOngoingTargets(wf, data)
+		alfred.StoreOngoingSources(wf, data)
 	default:
 		logrus.Info("Do nothing")
 	}

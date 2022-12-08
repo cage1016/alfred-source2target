@@ -10,7 +10,7 @@ import (
 )
 
 type DoConfig struct {
-	Target    string
+	Source    string
 	Arg       string
 	Type      string
 	Exclude   string
@@ -47,7 +47,7 @@ func FdExecute(cfg DoConfig) []string {
 	}
 
 	cmd := exec.Command("fd", flags...)
-	cmd.Dir = cfg.Target
+	cmd.Dir = cfg.Source
 	logrus.Debugf("fd: %s", cmd)
 
 	r, _ := cmd.StdoutPipe()

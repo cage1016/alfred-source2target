@@ -9,18 +9,18 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cage1016/alfred-targets2go/alfred"
+	"github.com/cage1016/alfred-source2target/alfred"
 )
 
 // t2gsCmd represents the t2gs command
 var t2gsCmd = &cobra.Command{
 	Use:   "t2gs",
-	Short: "Targets 2 go settings",
+	Short: "Source 2 Target settings",
 	Run:   runt2gsCmd,
 }
 
 func runt2gsCmd(cmd *cobra.Command, args []string) {
-	data, _ := alfred.LoadOngoingTargets(wf)
+	data, _ := alfred.LoadOngoingSources(wf)
 
 	wf.NewItem("BACK").
 		Subtitle("Back to list").
