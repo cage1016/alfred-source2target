@@ -12,14 +12,14 @@ import (
 	"github.com/cage1016/alfred-source2target/alfred"
 )
 
-// t2gsCmd represents the t2gs command
-var t2gsCmd = &cobra.Command{
-	Use:   "t2gs",
+// ssCmd represents the ss command
+var ssCmd = &cobra.Command{
+	Use:   "ss",
 	Short: "Source 2 Target settings",
-	Run:   runt2gsCmd,
+	Run:   runtSsCmd,
 }
 
-func runt2gsCmd(cmd *cobra.Command, args []string) {
+func runtSsCmd(cmd *cobra.Command, args []string) {
 	data, _ := alfred.LoadOngoingSources(wf)
 
 	wf.NewItem("BACK").
@@ -28,8 +28,9 @@ func runt2gsCmd(cmd *cobra.Command, args []string) {
 		Var("action", "back")
 
 	wf.NewItem("ADD").
-		Subtitle("Add more target folder to configuration").
+		Subtitle("Add more source folder to configuration").
 		Valid(true).
+		Arg("").
 		Var("action", "add")
 
 	for name, path := range data {
@@ -44,5 +45,5 @@ func runt2gsCmd(cmd *cobra.Command, args []string) {
 }
 
 func init() {
-	rootCmd.AddCommand(t2gsCmd)
+	rootCmd.AddCommand(ssCmd)
 }

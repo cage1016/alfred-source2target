@@ -153,7 +153,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A7129B73-875B-4956-975D-9A7B78D04E04</string>
+				<string>E5F93105-B802-4A42-9C3A-60334249DF16</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -277,7 +277,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E2F84A22-B6C9-4414-AEF0-CCD10D24918B</string>
+				<string>051510A8-3032-4D34-90A6-E1F51C1A5559</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -342,29 +342,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5D7DB7AD-9693-4268-B84D-B65A9FB54468</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>A7129B73-875B-4956-975D-9A7B78D04E04</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6B882DE7-614E-4C62-BF5E-4A030C63E900</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>939C694E-3F62-4EF5-A3AF-5C264C6850E2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -486,11 +463,21 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E2F84A22-B6C9-4414-AEF0-CCD10D24918B</key>
+		<key>E5F93105-B802-4A42-9C3A-60334249DF16</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>939C694E-3F62-4EF5-A3AF-5C264C6850E2</string>
+				<string>F6B9B1DD-451F-461F-A0FC-37A5C0D07DA7</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -902,7 +889,7 @@ function run([argv]) {
 				<key>runningsubtext</key>
 				<string>Source 2 Target Settings</string>
 				<key>script</key>
-				<string>./exe t2gs "$1"</string>
+				<string>./exe ss "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1230,7 +1217,7 @@ function run([argv]) {
 				<key>runningsubtext</key>
 				<string>Source 2 Target Settings</string>
 				<key>script</key>
-				<string>./exe t2gs "$1"</string>
+				<string>./exe ss "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1416,15 +1403,32 @@ function run([argv]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string></string>
-				<key>type</key>
-				<integer>100</integer>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>target valid</string>
+						<key>uid</key>
+						<string>4B78864D-2AFF-46BB-967E-D85B3FF6DDCD</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.actioninalfred</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>6B882DE7-614E-4C62-BF5E-4A030C63E900</string>
+			<string>DF929065-9427-4683-BBAA-49E0A5301194</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1452,7 +1456,7 @@ function run([argv]) {
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Do go folder</string>
+				<string>Do Come Finder</string>
 				<key>script</key>
 				<string>./exe dogo --source "${source}" -- "$1"</string>
 				<key>scriptargtype</key>
@@ -1460,7 +1464,7 @@ function run([argv]) {
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Do go folder</string>
+				<string>Do Come Finder</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -1471,39 +1475,22 @@ function run([argv]) {
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>A7129B73-875B-4956-975D-9A7B78D04E04</string>
+			<string>E5F93105-B802-4A42-9C3A-60334249DF16</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>target valid</string>
-						<key>uid</key>
-						<string>4B78864D-2AFF-46BB-967E-D85B3FF6DDCD</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
+				<key>path</key>
+				<string></string>
+				<key>type</key>
+				<integer>100</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.action.actioninalfred</string>
 			<key>uid</key>
-			<string>DF929065-9427-4683-BBAA-49E0A5301194</string>
+			<string>F6B9B1DD-451F-461F-A0FC-37A5C0D07DA7</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1607,42 +1594,6 @@ function run([targetFolder]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string></string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>BA351FC1-095D-4F4B-92EB-39A46A799333</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>jumpto</key>
-				<string>_popUpItemAction:</string>
-				<key>path</key>
-				<string></string>
-				<key>type</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.actioninalfred</string>
-			<key>uid</key>
-			<string>939C694E-3F62-4EF5-A3AF-5C264C6850E2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -1721,23 +1672,6 @@ function run([targetFolder]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>'{query}', {variables}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>E2F84A22-B6C9-4414-AEF0-CCD10D24918B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<integer>0</integer>
 				<key>filetypes</key>
@@ -1749,6 +1683,25 @@ function run([targetFolder]) {
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>61655438-45C9-48F4-907D-21EEFA1C8B90</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string></string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>BA351FC1-095D-4F4B-92EB-39A46A799333</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1771,6 +1724,23 @@ function run([targetFolder]) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>2A42D6EB-7B74-4024-95B2-EB464C577F29</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Move2Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>34EC05A2-8452-4282-8317-6271DADC259F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1825,23 +1795,6 @@ function run([argv]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<integer>0</integer>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Move2Here</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>34EC05A2-8452-4282-8317-6271DADC259F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -1871,7 +1824,7 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>595</real>
 			<key>ypos</key>
-			<real>1665</real>
+			<real>1300</real>
 		</dict>
 		<key>0029264A-B4F9-497A-B438-512976115187</key>
 		<dict>
@@ -1885,16 +1838,16 @@ function run([argv]) {
 		<key>00DF23E1-727D-4421-8700-5C5CC789FF33</key>
 		<dict>
 			<key>xpos</key>
-			<real>1595</real>
+			<real>1570</real>
 			<key>ypos</key>
-			<real>1190</real>
+			<real>1170</real>
 		</dict>
 		<key>051510A8-3032-4D34-90A6-E1F51C1A5559</key>
 		<dict>
 			<key>xpos</key>
-			<real>1355</real>
+			<real>1330</real>
 			<key>ypos</key>
-			<real>1190</real>
+			<real>1170</real>
 		</dict>
 		<key>0D01D3C7-59E9-4520-9263-ADD3739ED73F</key>
 		<dict>
@@ -1922,7 +1875,7 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>205</real>
 			<key>ypos</key>
-			<real>1595</real>
+			<real>1220</real>
 		</dict>
 		<key>2EB4A01C-C33D-4BF0-9D88-B2A8704E3EBB</key>
 		<dict>
@@ -1943,7 +1896,7 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1675</real>
+			<real>1300</real>
 		</dict>
 		<key>3AC3AA29-BDEB-4A56-BD44-BACD3B0C1C95</key>
 		<dict>
@@ -1964,7 +1917,7 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>670</real>
 			<key>ypos</key>
-			<real>1040</real>
+			<real>1055</real>
 		</dict>
 		<key>5CBBCBC6-9247-49E9-9F79-10D409E0D89D</key>
 		<dict>
@@ -1985,21 +1938,14 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1565</real>
+			<real>1190</real>
 		</dict>
 		<key>65B25B8D-C286-4333-973E-043722CED8FA</key>
 		<dict>
 			<key>xpos</key>
-			<real>660</real>
+			<real>680</real>
 			<key>ypos</key>
 			<real>270</real>
-		</dict>
-		<key>6B882DE7-614E-4C62-BF5E-4A030C63E900</key>
-		<dict>
-			<key>xpos</key>
-			<real>1100</real>
-			<key>ypos</key>
-			<real>1010</real>
 		</dict>
 		<key>6DCD6282-DB37-4D3C-A243-69F1A02E75C7</key>
 		<dict>
@@ -2022,23 +1968,16 @@ function run([argv]) {
 		<key>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</key>
 		<dict>
 			<key>xpos</key>
-			<real>995</real>
+			<real>1105</real>
 			<key>ypos</key>
-			<real>1300</real>
-		</dict>
-		<key>939C694E-3F62-4EF5-A3AF-5C264C6850E2</key>
-		<dict>
-			<key>xpos</key>
-			<real>1270</real>
-			<key>ypos</key>
-			<real>1300</real>
+			<real>1170</real>
 		</dict>
 		<key>95F62E81-B8F6-483F-A951-60DC7FB45AAA</key>
 		<dict>
 			<key>note</key>
 			<string>target 2 here action menu: add / remove</string>
 			<key>xpos</key>
-			<real>470</real>
+			<real>450</real>
 			<key>ypos</key>
 			<real>265</real>
 		</dict>
@@ -2065,15 +2004,6 @@ function run([argv]) {
 			<key>ypos</key>
 			<real>515</real>
 		</dict>
-		<key>A7129B73-875B-4956-975D-9A7B78D04E04</key>
-		<dict>
-			<key>note</key>
-			<string>show targets folder file with fd</string>
-			<key>xpos</key>
-			<real>805</real>
-			<key>ypos</key>
-			<real>1010</real>
-		</dict>
 		<key>B8631ECF-7764-490B-B56F-BB743A53787F</key>
 		<dict>
 			<key>xpos</key>
@@ -2084,9 +2014,9 @@ function run([argv]) {
 		<key>BA351FC1-095D-4F4B-92EB-39A46A799333</key>
 		<dict>
 			<key>xpos</key>
-			<real>1510</real>
+			<real>1485</real>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>1200</real>
 		</dict>
 		<key>C8CE2451-D929-4B9E-B367-F775A89E8FFF</key>
 		<dict>
@@ -2109,7 +2039,7 @@ function run([argv]) {
 			<key>xpos</key>
 			<real>205</real>
 			<key>ypos</key>
-			<real>1705</real>
+			<real>1330</real>
 		</dict>
 		<key>D56A95D4-CD83-4857-8495-9CA626C6E67C</key>
 		<dict>
@@ -2141,12 +2071,14 @@ function run([argv]) {
 			<key>ypos</key>
 			<real>785</real>
 		</dict>
-		<key>E2F84A22-B6C9-4414-AEF0-CCD10D24918B</key>
+		<key>E5F93105-B802-4A42-9C3A-60334249DF16</key>
 		<dict>
+			<key>note</key>
+			<string>show targets folder file with fd</string>
 			<key>xpos</key>
-			<real>1160</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>1330</real>
+			<real>1025</real>
 		</dict>
 		<key>EAAD9F64-A369-449C-A3F2-6914FC6E606C</key>
 		<dict>
@@ -2154,6 +2086,13 @@ function run([argv]) {
 			<real>1250</real>
 			<key>ypos</key>
 			<real>155</real>
+		</dict>
+		<key>F6B9B1DD-451F-461F-A0FC-37A5C0D07DA7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1105</real>
+			<key>ypos</key>
+			<real>1025</real>
 		</dict>
 		<key>F7B82A83-59EB-4447-8570-F581854776D9</key>
 		<dict>

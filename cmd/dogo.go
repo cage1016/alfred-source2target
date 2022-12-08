@@ -42,46 +42,49 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 				}
 
 				fdoc := filepath.Join(source, doc)
-				wf.NewItem(fmt.Sprintf("%d - %s", i, doc)).
+				wi := wf.NewItem(fmt.Sprintf("%d - %s", i, doc)).
 					Subtitle("Press return to move recent files up to this file into target folder.").
-					Quicklook(fdoc).
 					Valid(true).
-					Icon(&aw.Icon{
-						Value: fdoc,
-						Type:  "fileicon",
-					}).
+					Arg("").
+					Icon(&aw.Icon{Value: fdoc, Type: "fileicon"}).
+					Quicklook(fdoc).
 					ActionForType("file", fdoc).
-					Arg(ArgJSONBuilder("move", documents[:i+1], source))
+					Var("query", ArgJSONBuilder("move", documents[:i+1], source))
 
-				// wi.Cmd().
-				// 	Subtitle("Press return to move only this file into target folder.").
-				// 	Valid(true).
-				// 	Arg(ArgJSONBuilder("move", []string{doc}, target))
+				wi.Cmd().
+					Subtitle("Press return to move only this file into target folder.").
+					Valid(true).
+					Arg("").
+					Var("query", ArgJSONBuilder("move", []string{doc}, source))
 
-				// wi.Alt().
-				// 	Subtitle("Press return to copy recent files up to this file into target folder.").
-				// 	Valid(true).
-				// 	Arg(ArgJSONBuilder("copy", documents[:i+1], target))
+				wi.Alt().
+					Subtitle("Press return to copy recent files up to this file into target folder.").
+					Valid(true).
+					Arg("").
+					Var("query", ArgJSONBuilder("copy", documents[:i+1], source))
 
-				// wi.NewModifier("alt", "cmd").
-				// 	Subtitle("Press return to copy only this file into target folder.").
-				// 	Valid(true).
-				// 	Arg(ArgJSONBuilder("copy", []string{doc}, target))
+				wi.NewModifier("alt", "cmd").
+					Subtitle("Press return to copy only this file into target folder.").
+					Valid(true).
+					Arg("").
+					Var("query", ArgJSONBuilder("copy", []string{doc}, source))
 
-				// wi.Shift().
-				// 	Subtitle("Press return to send recent files up to this file to the pasteboard.").
-				// 	Valid(true).
-				// 	Arg(ArgJSONBuilder("pasteboard", documents[:i+1], target))
+				wi.Shift().
+					Subtitle("Press return to send recent files up to this file to the pasteboard.").
+					Valid(true).
+					Arg("").
+					Var("query", ArgJSONBuilder("pasteboard", documents[:i+1], source))
 
-				// wi.NewModifier("cmd", "shift").
-				// 	Subtitle("Press return to send only this file to the pasteboard.").
-				// 	Valid(true).
-				// 	Arg(ArgJSONBuilder("pasteboard", []string{doc}, target))
+				wi.NewModifier("cmd", "shift").
+					Subtitle("Press return to send only this file to the pasteboard.").
+					Valid(true).
+					Arg("").
+					Var("query", ArgJSONBuilder("pasteboard", []string{doc}, source))
 
-				// wi.Ctrl().
-				// 	Subtitle("Browse in alfred").
-				// 	Valid(true).
-				// 	Arg(fdoc)
+				wi.Ctrl().
+					Subtitle("Browse in alfred").
+					Valid(true).
+					Arg(fdoc)
 			}
 		} else {
 			wf.NewItem(documents[0]).Subtitle("").Valid(false)

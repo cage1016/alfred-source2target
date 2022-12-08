@@ -33,6 +33,7 @@ func runSclCmd(cmd *cobra.Command, args []string) {
 		wi.Cmd().
 			Subtitle("↩ Enter Action menu to Add / Remove source folder").
 			Valid(true).
+			Arg("").
 			Var("mode", m)
 	}
 
