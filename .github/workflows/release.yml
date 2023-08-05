@@ -66,17 +66,17 @@ jobs:
           # pack alfredworkflow
           cd .workflow
           plutil -replace version -string "${{ env.tag }}" info.plist
-          zip -r ../"Targets2Here-${{ env.tag }}.alfredworkflow" .
+          zip -r ../"Source2Target-${{ env.tag }}.alfredworkflow" .
           cd ..
 
           # zip alfredworkflow as zip archive for notarize
-          zip -r "Targets2Here-${{ env.tag }}.alfredworkflow.zip" "Targets2Here-${{ env.tag }}.alfredworkflow"
+          zip -r "Source2Target-${{ env.tag }}.alfredworkflow.zip" "Source2Target-${{ env.tag }}.alfredworkflow"
 
           # gon notarize
           cat <<EOF >> notarize.json
           {
               "notarize": [{
-                  "path": "${PWD}/Targets2Here-${{ env.tag }}.alfredworkflow.zip",
+                  "path": "${PWD}/Source2Target-${{ env.tag }}.alfredworkflow.zip",
                   "bundle_id": "com.kaichu.source2target",
                   "staple": false
               }]
@@ -84,7 +84,7 @@ jobs:
           EOF
           gon -log-level=debug -log-json ./notarize.json
 
-          echo "artifact=$(echo "Targets2Here-${{ env.tag }}.alfredworkflow")" >> $GITHUB_ENV
+          echo "artifact=$(echo "Source2Target-${{ env.tag }}.alfredworkflow")" >> $GITHUB_ENV
       - uses: shogo82148/actions-upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
