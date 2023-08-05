@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 KAI CHU CHUNG <cage.chung@gmail.com>
-
 */
 package cmd
 
@@ -34,7 +33,7 @@ func runtSsCmd(cmd *cobra.Command, args []string) {
 		Var("action", "add")
 
 	for name, path := range data {
-		wf.NewItem(fmt.Sprintf("Remove %s", name)).
+		wf.NewItem(fmt.Sprintf("REMOVE %s", name)).
 			Subtitle(fmt.Sprintf("remove '%s' from configuration", path)).
 			Valid(true).
 			Arg(path).
