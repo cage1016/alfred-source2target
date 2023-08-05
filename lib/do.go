@@ -4,47 +4,35 @@ import (
 	"bufio"
 	"io"
 	"os/exec"
+	"regexp"
 	"strings"
 
+	"github.com/samber/lo"
 	"github.com/sirupsen/logrus"
 )
 
+var regex = regexp.MustCompile(`\./.+`)
+
 type DoConfig struct {
-	Source    string
-	Arg       string
-	Type      string
-	Exclude   string
-	ExecBatch string
+	Source          string
+	Arg             string
+	Type            string
+	Exclude         string
+	MaxQueryResults int
 }
 
 func FdExecute(cfg DoConfig) []string {
-	flags := []string{}
-	for _, arg := range strings.Split(cfg.Arg, " ") {
-		if arg != "" {
-			flags = append(flags, arg)
-		}
-	}
-
-	// type
-	for _, ts := range strings.Split(cfg.Type, "\n") {
-		if ts != "" {
-			flags = append(flags, ts)
-		}
-	}
-
-	// exclude
-	for _, es := range strings.Split(cfg.Exclude, "\n") {
-		if es != "" {
-			flags = append(flags, "-E", es)
-		}
-	}
-
-	// exec batch
-	for _, bs := range strings.Split(cfg.ExecBatch, " ") {
-		if bs != "" {
-			flags = append(flags, bs)
-		}
-	}
+	// prepare flags
+	flags := lo.Compact[string](lo.ReduceRight([][]string{
+		strings.Split(cfg.Arg, " "),
+		strings.Split(cfg.Type, "\n"),
+		lo.FlatMap(lo.Compact[string](strings.Split(cfg.Exclude, "\n")), func(arg string, index int) []string {
+			return []string{"-E", arg}
+		}),
+	}, func(agg []string, item []string, _ int) []string {
+		return append(agg, item...)
+	}, []string{}))
+	flags = append(flags, "-X", "ls", "-lt") // exec batch
 
 	cmd := exec.Command("fd", flags...)
 	cmd.Dir = cfg.Source
@@ -58,8 +46,9 @@ func FdExecute(cfg DoConfig) []string {
 	worker(done, r, func(line string) {
 		logrus.Debugf("line: %s", line)
 		if strings.HasPrefix(line, "-") {
-			x := strings.Split(line, "./")
-			documents = append(documents, x[1])
+			matches := regex.FindAllString(line, -1)
+			logrus.Debugf("got: %s", matches[0])
+			documents = append(documents, matches[0])
 		} else {
 			documents = append(documents, line)
 		}
@@ -69,7 +58,13 @@ func FdExecute(cfg DoConfig) []string {
 	<-done
 	cmd.Wait()
 
-	return documents
+	// know issue
+	// how to break scanner.Scan loop with lock by cmd.Wait()?
+	if len(documents) > cfg.MaxQueryResults {
+		return documents[:cfg.MaxQueryResults]
+	} else {
+		return documents
+	}
 }
 
 func worker(done chan struct{}, r io.ReadCloser, fn func(string)) {

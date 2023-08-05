@@ -5,10 +5,10 @@ import (
 )
 
 const (
-	Debug     = "DEBUG"
-	Exclude   = "EXCLUDE"
-	Type      = "TYPE"
-	ExecBatch = "EXEC_BATCH"
+	Debug           = "DEBUG"
+	Exclude         = "EXCLUDE"
+	Type            = "TYPE"
+	MaxQueryResults = "MAX_QUERY_RESULTS"
 )
 
 func GetDebug(wf *aw.Workflow) bool {
@@ -23,6 +23,6 @@ func GetType(wf *aw.Workflow) string {
 	return wf.Config.Get(Type)
 }
 
-func GetExecBatch(wf *aw.Workflow) string {
-	return wf.Config.Get(ExecBatch)
+func GetMaxQueryResults(wf *aw.Workflow) int {
+	return wf.Config.GetInt(MaxQueryResults)
 }
