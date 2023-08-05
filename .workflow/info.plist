@@ -2148,6 +2148,8 @@ function run([argv]) {
 		</dict>
 		<key>051510A8-3032-4D34-90A6-E1F51C1A5559</key>
 		<dict>
+			<key>note</key>
+			<string>Do action (copy/move/pasteboard)</string>
 			<key>xpos</key>
 			<real>1790</real>
 			<key>ypos</key>
@@ -2279,7 +2281,7 @@ function run([argv]) {
 		<key>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</key>
 		<dict>
 			<key>xpos</key>
-			<real>1575</real>
+			<real>1565</real>
 			<key>ypos</key>
 			<real>1525</real>
 		</dict>
@@ -2470,9 +2472,9 @@ function run([argv]) {
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>--changed-within 1month</string>
+				<string>--changed-within 1w</string>
 				<key>placeholder</key>
-				<string>--changed-within 1month</string>
+				<string></string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
