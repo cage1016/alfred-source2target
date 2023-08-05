@@ -68,6 +68,66 @@ func TestFdExecute(t *testing.T) {
 				},
 			},
 		},
+		{
+			name: "query with exclude value",
+			prepare: func(f *fields) {
+				f.fn = lib.FdExecute
+			},
+			args: args{
+				n: map[lib.DoConfig][]string{
+					lib.DoConfig{
+						Source:          testdata.Path("target"),
+						Arg:             "",
+						Type:            "-tf",
+						Exclude:         "folder1\n*.txt",
+						MaxQueryResults: 100,
+					}: []string{
+						"./icon-svg.pdf",
+						"./apple-touch-icon.png",
+					},
+				},
+			},
+		},
+		{
+			name: "query return max result",
+			prepare: func(f *fields) {
+				f.fn = lib.FdExecute
+			},
+			args: args{
+				n: map[lib.DoConfig][]string{
+					lib.DoConfig{
+						Source:          testdata.Path("target"),
+						Arg:             "",
+						Type:            "-tf",
+						Exclude:         "",
+						MaxQueryResults: 2,
+					}: []string{
+						"./icon-svg.pdf",
+						"./folder1/f.txt",
+					},
+				},
+			},
+		},
+		{
+			name: "query fail with invalid parameter",
+			prepare: func(f *fields) {
+				f.fn = lib.FdExecute
+			},
+			args: args{
+				n: map[lib.DoConfig][]string{
+					lib.DoConfig{
+						Source:          testdata.Path("target"),
+						Arg:             "",
+						Type:            "-xxx",
+						Exclude:         "",
+						MaxQueryResults: 2,
+					}: []string{
+						"error: The argument '--exec <cmd>...' cannot be used with '--exec-batch <cmd>...'",
+						"",
+					},
+				},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

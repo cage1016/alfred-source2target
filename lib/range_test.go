@@ -156,3 +156,100 @@ func TestParseRangeNumber(t *testing.T) {
 		})
 	}
 }
+
+func TestIsPageRangeValid(t *testing.T) {
+	type res struct {
+		res bool
+	}
+
+	type fields struct {
+		c func(string) bool
+	}
+
+	type args struct {
+		s string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "#3,4,5 is valid",
+			args: args{
+				s: "#3,4,5",
+			},
+			want: true,
+		},
+		{
+			name: "#3-4,5-9,-5 is valid",
+			args: args{
+				s: "#3-4,5-9,-5",
+			},
+			want: true,
+		},
+		{
+			name: "-d, is invalid",
+			args: args{
+				s: "-d,",
+			},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := IsPageRangeValid(tt.args.s); got != tt.want {
+				t.Errorf("IsPageRangeValid() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestRanges_IsInRange(t *testing.T) {
+	type res struct {
+		res bool
+	}
+
+	type fields struct {
+		fn func(int) bool
+	}
+
+	type args struct {
+		val int
+	}
+	tests := []struct {
+		name string
+		r    Ranges
+		args args
+		want bool
+	}{
+		{
+			name: "2 in range",
+			r: Ranges{
+				{Start: 1, End: 3},
+				{Start: 5, End: 7},
+			},
+			args: args{
+				val: 2,
+			},
+			want: true,
+		},
+		{
+			name: "4 not in range",
+			r: Ranges{
+				{Start: 1, End: 3},
+				{Start: 5, End: 7},
+			},
+			args: args{
+				val: 4,
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.r.IsInRange(tt.args.val); got != tt.want {
+				t.Errorf("Ranges.IsInRange() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
