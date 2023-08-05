@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 KAI CHU CHUNG <cage.chung@gmail.com>
-
 */
 package cmd
 
@@ -27,11 +26,11 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 	source, _ := ccmd.Flags().GetString("source")
 
 	documents := lib.FdExecute(lib.DoConfig{
-		Source:    source,
-		Arg:       args[0],
-		Type:      alfred.GetType(wf),
-		Exclude:   alfred.GetExclude(wf),
-		ExecBatch: alfred.GetExecBatch(wf),
+		Source:  source,
+		Arg:     args[0],
+		Type:    alfred.GetType(wf),
+		Exclude: alfred.GetExclude(wf),
+		// ExecBatch: alfred.GetExecBatch(wf),
 	})
 
 	if len(documents) > 0 {
