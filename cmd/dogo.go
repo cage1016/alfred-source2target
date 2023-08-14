@@ -53,7 +53,7 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 	})
 
 	if len(documents) > 0 {
-		if !strings.HasPrefix(documents[0], "error") {
+		if !lib.IsFdError(documents[0]) {
 			for i, doc := range documents {
 				if strings.TrimSpace(doc) == "" {
 					continue
@@ -138,7 +138,13 @@ func runDogoCmd(ccmd *cobra.Command, args []string) {
 				}
 			}
 		} else {
-			wf.NewItem(documents[0]).Subtitle("").Valid(false)
+			for _, doc := range documents {
+				wf.NewItem(doc).
+					Subtitle("Press return to visit fd document").
+					Valid(true).
+					Var("action", "open").
+					Var("help", "https://github.com/sharkdp/fd")
+			}
 		}
 	}
 
