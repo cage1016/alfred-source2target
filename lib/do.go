@@ -1,10 +1,10 @@
 package lib
 
 import (
-	"bufio"
-	"io"
+	"bytes"
 	"os/exec"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"github.com/samber/lo"
@@ -22,7 +22,7 @@ type DoConfig struct {
 }
 
 func FdExecute(cfg DoConfig) []string {
-	// prepare flags
+	// prepare fd command flags
 	flags := lo.Compact[string](lo.ReduceRight([][]string{
 		strings.Split(cfg.Arg, " "),
 		strings.Split(cfg.Type, "\n"),
@@ -32,18 +32,30 @@ func FdExecute(cfg DoConfig) []string {
 	}, func(agg []string, item []string, _ int) []string {
 		return append(agg, item...)
 	}, []string{}))
-	flags = append(flags, "-X", "ls", "-lt") // exec batch
 
-	cmd := exec.Command("fd", flags...)
+	flags = append(flags, "-X", "ls", "-lt")                                    // exec batch
+	flags = append(flags, "|", "head", "-n", strconv.Itoa(cfg.MaxQueryResults)) // limit results
+
+	// prepare fd command
+	cmd := exec.Command("sh", "-c", "fd "+strings.Join(flags, " "))
 	cmd.Dir = cfg.Source
-	logrus.Debugf("fd: %s", cmd)
 
-	r, _ := cmd.StdoutPipe()
-	cmd.Stderr = cmd.Stdout
+	var out bytes.Buffer
+	var errOut bytes.Buffer
+	cmd.Stdout = &out
+	cmd.Stderr = &errOut
+
+	err := cmd.Run()
+	if err != nil {
+		logrus.Fatal(err)
+	}
 
 	documents := []string{}
-	done := make(chan struct{})
-	worker(done, r, func(line string) {
+	for _, line := range strings.Split(out.String(), "\n") {
+		if line == "" {
+			continue
+		}
+
 		logrus.Debugf("line: %s", line)
 		if strings.HasPrefix(line, "-") {
 			matches := regex.FindAllString(line, -1)
@@ -52,27 +64,15 @@ func FdExecute(cfg DoConfig) []string {
 		} else {
 			documents = append(documents, line)
 		}
-	})
-
-	cmd.Start()
-	<-done
-	cmd.Wait()
-
-	// know issue
-	// how to break scanner.Scan loop with lock by cmd.Wait()?
-	if len(documents) > cfg.MaxQueryResults {
-		return documents[:cfg.MaxQueryResults]
-	} else {
-		return documents
 	}
-}
 
-func worker(done chan struct{}, r io.ReadCloser, fn func(string)) {
-	scanner := bufio.NewScanner(r)
-	go func() {
-		for scanner.Scan() {
-			fn(scanner.Text())
+	for _, line := range strings.Split(errOut.String(), "\n") {
+		if line == "" {
+			continue
 		}
-		done <- struct{}{}
-	}()
+
+		documents = append(documents, line)
+	}
+
+	return lo.Uniq(lo.WithoutEmpty(documents))
 }

@@ -79,7 +79,7 @@ func TestFdExecute(t *testing.T) {
 						Source:          testdata.Path("target"),
 						Arg:             "",
 						Type:            "-tf",
-						Exclude:         "folder1\n*.txt",
+						Exclude:         "folder1\n'*.txt'",
 						MaxQueryResults: 100,
 					}: []string{
 						"./icon-svg.pdf",
@@ -123,7 +123,8 @@ func TestFdExecute(t *testing.T) {
 						MaxQueryResults: 2,
 					}: []string{
 						"error: The argument '--exec <cmd>...' cannot be used with '--exec-batch <cmd>...'",
-						"",
+						"Usage: fd --exec <cmd>... [pattern] [path]...",
+						"For more information try '--help'",
 					},
 				},
 			},
