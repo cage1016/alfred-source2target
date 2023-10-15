@@ -4,7 +4,6 @@ Copyright © 2022 KAI CHU CHUNG <cage.chung@gmail.com>
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"path/filepath"
 	"strings"
@@ -22,17 +21,6 @@ var docomeCmd = &cobra.Command{
 	Use:   "docome",
 	Short: "do come here",
 	Run:   runDocomeCmd,
-}
-
-type Arg struct {
-	Op    string   `json:"op"`
-	Files []string `json:"files"`
-	Base  string   `json:"base"`
-}
-
-func ArgJSONBuilder(op string, files []string, base string) string {
-	j, _ := json.Marshal(Arg{op, files, base})
-	return string(j)
 }
 
 func runDocomeCmd(ccmd *cobra.Command, args []string) {
