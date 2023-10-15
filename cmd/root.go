@@ -65,7 +65,7 @@ var rootCmd = &cobra.Command{
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	wf.Run(func() {
-		if _, err := os.Stat(filepath.Join(wf.DataDir(), "targets.json")); errors.Is(err, os.ErrNotExist) {
+		if _, err := os.Stat(filepath.Join(wf.DataDir(), "sources.json")); errors.Is(err, os.ErrNotExist) {
 			alfred.StoreOngoingSources(wf, alfred.Sources{})
 		}
 
