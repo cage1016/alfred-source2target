@@ -348,6 +348,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>9544CB85-C8C9-43A0-ABC1-A29729B0031C</key>
 		<array>
@@ -731,21 +741,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string></string>
-				<key>type</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.actioninalfred</string>
-			<key>uid</key>
-			<string>F7B82A83-59EB-4447-8570-F581854776D9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
@@ -761,6 +756,21 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>2E379C96-91D2-4BD5-AE0B-D49FC45DC906</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+				<key>type</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.actioninalfred</string>
+			<key>uid</key>
+			<string>F7B82A83-59EB-4447-8570-F581854776D9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -799,7 +809,7 @@
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>/Users/kaichuchung/Downloads</string>
+				<string>{var:DEFAULT_DOWNLOADS}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -856,11 +866,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>S</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -991,103 +1001,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:DEFAULT_QUERY}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>source</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>310F5A45-E71B-417A-95C1-7AF38636B5F7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>#!/usr/bin/env osascript -l JavaScript
-
-function run([argv]) {
-    ObjC.import('stdlib')
-    const envDocuments = $.getenv("documents");
-    const action = $.getenv("action");
-    var { op, files, base: BASE } = JSON.parse(envDocuments);
-
-    if (action === "choose op") {
-        op = argv
-    }
-
-    const App = Application.currentApplication();
-    App.includeStandardAdditions = true;
-
-    const FinderPath = () =&gt;
-        decodeURI(
-            Application('Finder')
-                .insertionLocation()
-                .url()
-                .replace(/^file:\/\//, ''),
-        );
-
-    const ACTIONS = {
-        pasteboard: (files) =&gt; {
-            ObjC.import('AppKit');
-            const pasteboard = $.NSPasteboard.generalPasteboard;
-            pasteboard.clearContents;
-            []
-                .concat(files)
-                .forEach((f) =&gt;
-                    pasteboard.writeObjects([
-                        ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
-                    ]),
-                );
-        },
-        move: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`mv "${BASE}/${file}" "${FinderPath()}"`),
-            ),
-        copy: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`cp "${BASE}/${file}" "${FinderPath()}"`),
-            ),
-    };
-
-    if (op != "pasteboard"){
-        const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
-        if (!frontmost_app_name.startsWith('Finder')) {
-            return "You need put Finder as your frontmost app"
-        }
-    }
-
-    ACTIONS[op](files);
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9E2AE6DB-0EA1-43F0-B543-8EEE8A5C0701</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1126,6 +1039,115 @@ function run([argv]) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env osascript -l JavaScript
+
+ObjC.import('stdlib')
+
+const envDocuments = $.getenv("documents");
+const action = $.getenv("action");
+var { op, files, base: BASE } = JSON.parse(envDocuments);
+
+if (action === "choose op") {
+    op = argv[0]
+}
+
+const app = Application.currentApplication();
+app.includeStandardAdditions = true;
+
+const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+
+let FinderPath;
+if (appName === "QSpace Pro") {
+    FinderPath = () =&gt; {
+        const QSpacePro = Application("QSpace Pro");
+        var selectedItemUrl;
+        var selectedItems = QSpacePro.selectedItems();
+        if (selectedItems.length &gt; 0) {
+            selectedItemUrl = selectedItems[0].urlstr();
+        } else {
+            selectedItemUrl = QSpacePro.rootItem.urlstr();
+        }
+        return decodeURIComponent(selectedItemUrl).slice(7);
+    };
+} else if (appName === "Finder") {
+    FinderPath = () =&gt;
+        decodeURI(
+            Application(appName)
+                .insertionLocation()
+                .url()
+                .replace(/^file:\/\//, '')
+        );
+} else {
+    throw new Error("You need put Finder or QSpace Pro as your frontmost app");
+}
+
+const ACTIONS = {
+    pasteboard: (files) =&gt; {
+        ObjC.import('AppKit');
+        const pasteboard = $.NSPasteboard.generalPasteboard;
+        pasteboard.clearContents;
+        []
+            .concat(files)
+            .forEach((f) =&gt;
+                pasteboard.writeObjects([
+                    ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
+                ]),
+            );
+    },
+    move: (files) =&gt; {
+        files.forEach((file) =&gt;
+            app.doShellScript(`mv "${BASE}/${file}" "${FinderPath()}"`),
+        )}
+        ,
+    copy: (files) =&gt;
+        files.forEach((file) =&gt;
+            app.doShellScript(`cp "${BASE}/${file}" "${FinderPath()}"`),
+        ),
+};
+
+ACTIONS[op](files);</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9E2AE6DB-0EA1-43F0-B543-8EEE8A5C0701</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:DEFAULT_QUERY}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>source</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>310F5A45-E71B-417A-95C1-7AF38636B5F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>inputstring</key>
 				<string></string>
 				<key>matchcasesensitive</key>
@@ -1141,6 +1163,52 @@ function run([argv]) {
 			<string>EAAD9F64-A369-449C-A3F2-6914FC6E606C</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {variables}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>E9C9F889-8DB0-42CF-AD49-CDF91ED5A9FE</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1196,21 +1264,49 @@ function run([argv]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>scf</string>
-				<key>passinputasargument</key>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
 				<true/>
-				<key>passvariables</key>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
 				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Source 2 Target Settings</string>
+				<key>script</key>
+				<string>./exe ss "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Source 2 Target Settings</string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>0D01D3C7-59E9-4520-9263-ADD3739ED73F</string>
+			<string>95F62E81-B8F6-483F-A951-60DC7FB45AAA</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1224,6 +1320,25 @@ function run([argv]) {
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>C8CE2451-D929-4B9E-B367-F775A89E8FFF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>scf</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>0D01D3C7-59E9-4520-9263-ADD3739ED73F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1273,53 +1388,6 @@ function run([argv]) {
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6DCD6282-DB37-4D3C-A243-69F1A02E75C7</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Source 2 Target Settings</string>
-				<key>script</key>
-				<string>./exe ss "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Source 2 Target Settings</string>
-				<key>title</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>95F62E81-B8F6-483F-A951-60DC7FB45AAA</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1380,21 +1448,6 @@ function run([argv]) {
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>65B25B8D-C286-4333-973E-043722CED8FA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>sf</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>E04C412B-486F-48B3-A294-820B47463374</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1477,6 +1530,21 @@ function run([argv]) {
 			<string>3DBFE9BA-9E91-4B20-8A41-4A27566EFEE0</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>sf</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>E04C412B-486F-48B3-A294-820B47463374</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1619,72 +1687,6 @@ function run([argv]) {
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Source 2 Target Settings</string>
-				<key>script</key>
-				<string>./exe ss "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Source 2 Target Settings</string>
-				<key>title</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>D1DD877C-01B4-4C2B-81B9-E0C2BA9B648F</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>sgf</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>D56A95D4-CD83-4857-8495-9CA626C6E67C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
 				<key>keyword</key>
 				<string>sgf</string>
 				<key>queuedelaycustom</key>
@@ -1733,6 +1735,72 @@ function run([argv]) {
 			<string>3AC3AA29-BDEB-4A56-BD44-BACD3B0C1C95</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>sgf</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D56A95D4-CD83-4857-8495-9CA626C6E67C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Source 2 Target Settings</string>
+				<key>script</key>
+				<string>./exe ss "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Source 2 Target Settings</string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D1DD877C-01B4-4C2B-81B9-E0C2BA9B648F</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2014,89 +2082,6 @@ function run([argv]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>#!/usr/bin/env osascript -l JavaScript
-
-function run([targetFolder]) {
-    ObjC.import("stdlib")
-    const envDocuments = $.getenv("documents");
-    const action = $.getenv("action");
-    var { op, files, base: BASE } = JSON.parse(envDocuments);
-
-    if (action === "choose op") {
-        op = $.getenv("op")
-    }
-
-    const App = Application.currentApplication();
-    App.includeStandardAdditions = true;
-
-    const ACTIONS = {
-        pasteboard: (files) =&gt; {
-            ObjC.import('AppKit');
-            const pasteboard = $.NSPasteboard.generalPasteboard;
-            pasteboard.clearContents;
-            []
-                .concat(files)
-                .forEach((f) =&gt;
-                    pasteboard.writeObjects([
-                        ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
-                    ]),
-                );
-        },
-        move: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`mv "${BASE}/${file}" "${targetFolder}"`),
-            ),
-        copy: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`cp "${BASE}/${file}" "${targetFolder}"`),
-            ),
-    };
-
-    ACTIONS[op](files);
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>051510A8-3032-4D34-90A6-E1F51C1A5559</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Source 2 Target</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>00DF23E1-727D-4421-8700-5C5CC789FF33</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -2169,6 +2154,89 @@ function run([targetFolder]) {
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Source 2 Target</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>00DF23E1-727D-4421-8700-5C5CC789FF33</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env osascript -l JavaScript
+
+function run([targetFolder]) {
+    ObjC.import("stdlib")
+    const envDocuments = $.getenv("documents");
+    const action = $.getenv("action");
+    var { op, files, base: BASE } = JSON.parse(envDocuments);
+
+    if (action === "choose op") {
+        op = $.getenv("op")
+    }
+
+    const App = Application.currentApplication();
+    App.includeStandardAdditions = true;
+
+    const ACTIONS = {
+        pasteboard: (files) =&gt; {
+            ObjC.import('AppKit');
+            const pasteboard = $.NSPasteboard.generalPasteboard;
+            pasteboard.clearContents;
+            []
+                .concat(files)
+                .forEach((f) =&gt;
+                    pasteboard.writeObjects([
+                        ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
+                    ]),
+                );
+        },
+        move: (files) =&gt;
+            files.forEach((file) =&gt;
+                App.doShellScript(`mv "${BASE}/${file}" "${targetFolder}"`),
+            ),
+        copy: (files) =&gt;
+            files.forEach((file) =&gt;
+                App.doShellScript(`cp "${BASE}/${file}" "${targetFolder}"`),
+            ),
+    };
+
+    ACTIONS[op](files);
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>051510A8-3032-4D34-90A6-E1F51C1A5559</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -2282,54 +2350,50 @@ function run([targetFolder]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<integer>0</integer>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Move2Here</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>34EC05A2-8452-4282-8317-6271DADC259F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>#!/usr/bin/env osascript -l JavaScript
+				<string>ObjC.import('stdlib')
 
-function run([argv]) {
-  ObjC.import('stdlib')
+const op = $.getenv('op')
+const file = $.getenv('file')
 
-  const op = $.getenv('op')
-  const file = $.getenv('file')
+const App = Application.currentApplication();
+App.includeStandardAdditions = true;
 
-  const App = Application.currentApplication();
-  App.includeStandardAdditions = true;
+const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+let FinderPath;
+if (appName === "QSpace Pro") {
+    FinderPath = () =&gt; {
+        const QSpacePro = Application("QSpace Pro");
+        var selectedItemUrl;
+        var selectedItems = QSpacePro.selectedItems();
+        if (selectedItems.length &gt; 0) {
+            selectedItemUrl = selectedItems[0].urlstr();
+        } else {
+            selectedItemUrl = QSpacePro.rootItem.urlstr();
+        }
+        return decodeURIComponent(selectedItemUrl).slice(7);
+    };
+} else if (appName === "Finder") {
+    FinderPath = () =&gt;
+        decodeURI(
+            Application(appName)
+                .insertionLocation()
+                .url()
+                .replace(/^file:\/\//, '')
+        );
+} else {
+    throw new Error("You need put Finder or QSpace Pro as your frontmost app");
+}
+const ACTIONS = {
+  move: (file) =&gt; App.doShellScript(`mv "${file}" "${FinderPath()}"`),
+  copy: (file) =&gt; App.doShellScript(`cp "${file}" "${FinderPath()}"`),
+};
 
-  const FinderPath = () =&gt;
-    decodeURI(
-      Application('Finder')
-        .insertionLocation()
-        .url()
-        .replace(/^file:\/\//, ''),
-    );
-
-  const ACTIONS = {
-    move: (file) =&gt; App.doShellScript(`mv "${file}" "${FinderPath()}"`),
-    copy: (file) =&gt; App.doShellScript(`cp "${file}" "${FinderPath()}"`),
-  };
-
-  ACTIONS[op](file);
-}</string>
+ACTIONS[op](file);</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2343,6 +2407,23 @@ function run([argv]) {
 			<string>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Move2Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>34EC05A2-8452-4282-8317-6271DADC259F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2792,6 +2873,13 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>ypos</key>
 			<real>1090</real>
 		</dict>
+		<key>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</key>
+		<dict>
+			<key>xpos</key>
+			<real>1405</real>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
 		<key>E5F93105-B802-4A42-9C3A-60334249DF16</key>
 		<dict>
 			<key>note</key>
@@ -2800,6 +2888,13 @@ https://github.com/cage1016/alfred-source2target</string>
 			<real>810</real>
 			<key>ypos</key>
 			<real>1330</real>
+		</dict>
+		<key>E9C9F889-8DB0-42CF-AD49-CDF91ED5A9FE</key>
+		<dict>
+			<key>xpos</key>
+			<real>1860</real>
+			<key>ypos</key>
+			<real>460</real>
 		</dict>
 		<key>EAAD9F64-A369-449C-A3F2-6914FC6E606C</key>
 		<dict>
@@ -2846,6 +2941,27 @@ https://github.com/cage1016/alfred-source2target</string>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Downloads</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Downloads</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>DEFAULT_DOWNLOADS</string>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
