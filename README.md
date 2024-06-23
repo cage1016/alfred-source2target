@@ -15,7 +15,7 @@
 
 ## Features
 - Add / Remove **Source** folder
-- Transfer and replicate files from **Source** folder to frontest Finder location
+- Transfer and replicate files from **Source** folder to frontest Finder or QSpace Pro location
 - Transfer and replicate files from **Source** folder to **Target** folder picked from Alfred
 
 ## Usage

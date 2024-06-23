@@ -2710,7 +2710,7 @@ if (appName !== "QSpace Pro" &amp;&amp; appName !== "Finder") {
 
 ## Features
 - Add / Remove **Source** folder
-- Transfer and replicate files from **Source** folder to frontest Finder location
+- Transfer and replicate files from **Source** folder to frontest Finder or QSpace Pro location
 - Transfer and replicate files from **Source** folder to **Target** folder picked from Alfred
 
 ## Usage
@@ -2777,9 +2777,14 @@ Also support `#1,6` range selection syntax fulfill specific file(s)
 
 
 ## Change Log
-## 0.1.1
+
+### 0.2.1
+- add QSpace Pro and Finder support
+
+### 0.1.1
 - fix(cmd): set file from targets.json to sources.json
-## 0.1.0
+
+### 0.1.0
 - Initial release
 
 https://github.com/cage1016/alfred-source2target</string>
@@ -3405,7 +3410,7 @@ check `fd --help` for more details.</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.1.1</string>
+	<string>0.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/cage1016/alfred-source2target</string>
 </dict>
