@@ -6,6 +6,19 @@
 	<string>com.kaichu.source2target</string>
 	<key>connections</key>
 	<dict>
+		<key>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91CE7D70-E413-4692-BB78-A78B461CBA01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0029264A-B4F9-497A-B438-512976115187</key>
 		<array>
 			<dict>
@@ -23,7 +36,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BA351FC1-095D-4F4B-92EB-39A46A799333</string>
+				<string>83E5E27F-D8F4-4B6C-B3C1-634D07D4D928</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -97,6 +110,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>166FB457-82D6-41F1-BFBA-0B5B654137A9</key>
+		<array/>
 		<key>2A42D6EB-7B74-4024-95B2-EB464C577F29</key>
 		<array>
 			<dict>
@@ -110,6 +125,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2B03FB6C-B050-4E7B-9804-77CEF5AD3F3C</key>
+		<array/>
 		<key>310F5A45-E71B-417A-95C1-7AF38636B5F7</key>
 		<array>
 			<dict>
@@ -128,6 +145,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3701E996-696A-46F9-845C-233B025354CB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>051510A8-3032-4D34-90A6-E1F51C1A5559</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -276,6 +306,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>83E5E27F-D8F4-4B6C-B3C1-634D07D4D928</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>793F795D-6810-4DC4-BFA6-A008465FFE48</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>884ECC2F-AF23-4EA4-9BD9-C1F09AAB8E57</key>
 		<array>
 			<dict>
@@ -303,7 +346,43 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>051510A8-3032-4D34-90A6-E1F51C1A5559</string>
+				<string>3701E996-696A-46F9-845C-233B025354CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8D016C4B-8051-4BEA-9981-18CEA4CEBE25</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6D21B2E-4F6B-4859-9092-8062312473EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A65A07EB-6A70-492B-A77A-6991CAF6190E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>91CE7D70-E413-4692-BB78-A78B461CBA01</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5FC9347-0830-4C22-950B-5D1D7A27AB0C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -348,9 +427,12 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>936BEC39-B097-4D90-82DF-ED6D68BF6997</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</string>
+				<string>C3347219-5448-49D0-B8E9-76DE5683DB4F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -363,7 +445,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9E2AE6DB-0EA1-43F0-B543-8EEE8A5C0701</string>
+				<string>E11D8A4F-7750-45FC-93C5-6C01EF5FDB8D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -414,7 +496,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>EAAD9F64-A369-449C-A3F2-6914FC6E606C</string>
+				<string>936BEC39-B097-4D90-82DF-ED6D68BF6997</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -441,19 +523,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>5D7DB7AD-9693-4268-B84D-B65A9FB54468</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>AAFC9260-D994-44DB-B40E-D55C75A090DF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -499,11 +568,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BA351FC1-095D-4F4B-92EB-39A46A799333</key>
+		<key>C0320364-C637-4EED-B06D-E65900E865BE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>00DF23E1-727D-4421-8700-5C5CC789FF33</string>
+				<string>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -615,6 +684,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E11D8A4F-7750-45FC-93C5-6C01EF5FDB8D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E2AE6DB-0EA1-43F0-B543-8EEE8A5C0701</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E2EE83F1-C42D-4491-A016-87C4D89B8BDE</key>
 		<array>
 			<dict>
@@ -661,19 +743,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>EAAD9F64-A369-449C-A3F2-6914FC6E606C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5CBBCBC6-9247-49E9-9F79-10D409E0D89D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>F1D1F453-7FB3-40D5-A2F9-630BFAA06454</key>
 		<array>
 			<dict>
@@ -691,7 +760,32 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>AAFC9260-D994-44DB-B40E-D55C75A090DF</string>
+				<string>C0320364-C637-4EED-B06D-E65900E865BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F6D21B2E-4F6B-4859-9092-8062312473EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B03FB6C-B050-4E7B-9804-77CEF5AD3F3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6374B47D-D11A-4656-A5CC-8E6878C736FD</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>166FB457-82D6-41F1-BFBA-0B5B654137A9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -738,6 +832,112 @@
 	<string>Source 2 Target</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Source 2 Target</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2B03FB6C-B050-4E7B-9804-77CEF5AD3F3C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>notifier</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>8D016C4B-8051-4BEA-9981-18CEA4CEBE25</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^(cp|mv)</string>
+						<key>outputlabel</key>
+						<string>Success</string>
+						<key>uid</key>
+						<string>6374B47D-D11A-4656-A5CC-8E6878C736FD</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Error</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F6D21B2E-4F6B-4859-9092-8062312473EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Error: {query}</string>
+				<key>title</key>
+				<string>Source 2 Target</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>166FB457-82D6-41F1-BFBA-0B5B654137A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {variables}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>A65A07EB-6A70-492B-A77A-6991CAF6190E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -851,6 +1051,27 @@
 			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
 			<string>9544CB85-C8C9-43A0-ABC1-A29729B0031C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>json</key>
+				<string>{
+  "alfredworkflow" : {
+    "config" : {
+    },
+    "variables" : {
+      "op" : "{query}"
+    }
+  }
+}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.json</string>
+			<key>uid</key>
+			<string>E11D8A4F-7750-45FC-93C5-6C01EF5FDB8D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1001,21 +1222,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Source 2 Target</string>
+				<key>externaltriggerid</key>
+				<string>notifier</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>5CBBCBC6-9247-49E9-9F79-10D409E0D89D</string>
+			<string>C3347219-5448-49D0-B8E9-76DE5683DB4F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1042,75 +1261,88 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>68</integer>
 				<key>script</key>
-				<string>#!/usr/bin/env osascript -l JavaScript
-
-ObjC.import('stdlib')
+				<string>ObjC.import("stdlib")
+ObjC.import('AppKit')
 
 const envDocuments = $.getenv("documents");
 const action = $.getenv("action");
 var { op, files, base: BASE } = JSON.parse(envDocuments);
 
 if (action === "choose op") {
-    op = argv[0]
+    op = $.getenv("op")
 }
 
-const app = Application.currentApplication();
-app.includeStandardAdditions = true;
-
-const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
-
-let FinderPath;
-if (appName === "QSpace Pro") {
-    FinderPath = () =&gt; {
-        const QSpacePro = Application("QSpace Pro");
-        var selectedItemUrl;
-        var selectedItems = QSpacePro.selectedItems();
-        if (selectedItems.length &gt; 0) {
-            selectedItemUrl = selectedItems[0].urlstr();
-        } else {
-            selectedItemUrl = QSpacePro.rootItem.urlstr();
-        }
-        return decodeURIComponent(selectedItemUrl).slice(7);
-    };
-} else if (appName === "Finder") {
-    FinderPath = () =&gt;
-        decodeURI(
-            Application(appName)
-                .insertionLocation()
-                .url()
-                .replace(/^file:\/\//, '')
-        );
-} else {
-    throw new Error("You need put Finder or QSpace Pro as your frontmost app");
-}
+const App = Application.currentApplication();
+App.includeStandardAdditions = true;
 
 const ACTIONS = {
     pasteboard: (files) =&gt; {
-        ObjC.import('AppKit');
+        let message = []
         const pasteboard = $.NSPasteboard.generalPasteboard;
         pasteboard.clearContents;
         []
             .concat(files)
-            .forEach((f) =&gt;
+            .forEach((f) =&gt; {                
                 pasteboard.writeObjects([
                     ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
-                ]),
-            );
+                ])
+                message.push(`cp ${BASE}/${f} to pasteboard`)
+            });
+        return message.join(",")
     },
     move: (files) =&gt; {
-        files.forEach((file) =&gt;
-            app.doShellScript(`mv "${BASE}/${file}" "${FinderPath()}"`),
-        )}
-        ,
-    copy: (files) =&gt;
-        files.forEach((file) =&gt;
-            app.doShellScript(`cp "${BASE}/${file}" "${FinderPath()}"`),
-        ),
+        let message = []
+        files.forEach((file) =&gt; {
+            App.doShellScript(`mv "${BASE}/${file}" "${FinderPath()}"`)
+            message.push(`mv "${BASE}/${file}" "${FinderPath()}"`)
+        })
+        return message.join(",")
+    },
+    copy: (files) =&gt; {
+        let message = []
+        files.forEach((file) =&gt; {
+            App.doShellScript(`cp "${BASE}/${file}" "${FinderPath()}"`)
+            message.push(`cp "${BASE}/${file}" "${FinderPath()}"`)
+        })
+        return message.join(",")
+    },
 };
 
-ACTIONS[op](files);</string>
+const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+let FinderPath;
+
+if (appName !== 'Finder' &amp;&amp; appName !== 'QSpace Pro') {
+    'You need put Finder or QSpace Pro as your frontmost app'
+} else {
+    switch (appName) {
+        case "QSpace Pro":
+            FinderPath = () =&gt; {
+                const QSpacePro = Application(appName);
+                var selectedItemUrl;
+                var selectedItems = QSpacePro.selectedItems();
+                if (selectedItems.length &gt; 0) {
+                    selectedItemUrl = selectedItems[0].urlstr();
+                } else {
+                    selectedItemUrl = QSpacePro.rootItem.urlstr();
+                }
+                return decodeURIComponent(selectedItemUrl).slice(7);
+            };
+            break;
+        case "Finder":
+            FinderPath = () =&gt;
+                decodeURI(
+                    Application(appName)
+                        .insertionLocation()
+                        .url()
+                        .replace(/^file:\/\//, '')
+                );
+            break;
+    }
+
+    ACTIONS[op](files);
+}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1148,67 +1380,15 @@ ACTIONS[op](files);</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string></string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.utility.transform</string>
 			<key>uid</key>
-			<string>EAAD9F64-A369-449C-A3F2-6914FC6E606C</string>
+			<string>936BEC39-B097-4D90-82DF-ED6D68BF6997</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>'{query}', {variables}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>E9C9F889-8DB0-42CF-AD49-CDF91ED5A9FE</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1619,23 +1799,6 @@ ACTIONS[op](files);</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>'{query}', {variables}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>5D7DB7AD-9693-4268-B84D-B65A9FB54468</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
 				<false/>
@@ -1649,6 +1812,23 @@ ACTIONS[op](files);</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>11861E15-A756-4EE8-B4E8-83BD5978497B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {variables}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>5D7DB7AD-9693-4268-B84D-B65A9FB54468</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2160,21 +2340,19 @@ ACTIONS[op](files);</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Source 2 Target</string>
+				<key>externaltriggerid</key>
+				<string>notifier</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>00DF23E1-727D-4421-8700-5C5CC789FF33</string>
+			<string>793F795D-6810-4DC4-BFA6-A008465FFE48</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2186,46 +2364,53 @@ ACTIONS[op](files);</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>#!/usr/bin/env osascript -l JavaScript
+				<string>ObjC.import("stdlib")
+const envDocuments = $.getenv("documents");
+const action = $.getenv("action");
+var { op, files, base: BASE } = JSON.parse(envDocuments);
+const targetFolder = $.getenv("targetFolder");
 
-function run([targetFolder]) {
-    ObjC.import("stdlib")
-    const envDocuments = $.getenv("documents");
-    const action = $.getenv("action");
-    var { op, files, base: BASE } = JSON.parse(envDocuments);
+if (action === "choose op") {
+    op = $.getenv("op")
+}
 
-    if (action === "choose op") {
-        op = $.getenv("op")
-    }
+const App = Application.currentApplication();
+App.includeStandardAdditions = true;
 
-    const App = Application.currentApplication();
-    App.includeStandardAdditions = true;
+const ACTIONS = {
+    pasteboard: (files) =&gt; {
+        let message = []
+        const pasteboard = $.NSPasteboard.generalPasteboard;
+        pasteboard.clearContents;
+        []
+            .concat(files)
+            .forEach((f) =&gt; {
+                pasteboard.writeObjects([
+                    ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
+                ])
+                message.push(`cp ${BASE}/${f} to pasteboard`)
+            });
+        return message.join(",")
+    },
+    move: (files) =&gt; {
+        let message = []
+        files.forEach((file) =&gt; {
+            App.doShellScript(`mv "${BASE}/${file}" "${targetFolder}"`),
+            message.push(`mv "${BASE}/${file}" "${targetFolder}"`)
+        })
+        return message.join(",")
+    },
+    copy: (files) =&gt; {
+        let message = []
+        files.forEach((file) =&gt; {
+            App.doShellScript(`cp "${BASE}/${file}" "${targetFolder}"`),
+            message.push(`cp "${BASE}/${file}" "${targetFolder}"`)
+        })
+        return message.join(",")
+    },
+};
 
-    const ACTIONS = {
-        pasteboard: (files) =&gt; {
-            ObjC.import('AppKit');
-            const pasteboard = $.NSPasteboard.generalPasteboard;
-            pasteboard.clearContents;
-            []
-                .concat(files)
-                .forEach((f) =&gt;
-                    pasteboard.writeObjects([
-                        ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
-                    ]),
-                );
-        },
-        move: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`mv "${BASE}/${file}" "${targetFolder}"`),
-            ),
-        copy: (files) =&gt;
-            files.forEach((file) =&gt;
-                App.doShellScript(`cp "${BASE}/${file}" "${targetFolder}"`),
-            ),
-    };
-
-    ACTIONS[op](files);
-}</string>
+ACTIONS[op](files);</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2243,19 +2428,74 @@ function run([targetFolder]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string></string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Copy2Here</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>BA351FC1-095D-4F4B-92EB-39A46A799333</string>
+			<string>61655438-45C9-48F4-907D-21EEFA1C8B90</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>83E5E27F-D8F4-4B6C-B3C1-634D07D4D928</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>json</key>
+				<string>{
+  "alfredworkflow" : {
+    "arg" : "",
+    "config" : {
+    },
+    "variables" : {
+      "targetFolder" : "{query}"
+    }
+  }
+}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.json</string>
+			<key>uid</key>
+			<string>3701E996-696A-46F9-845C-233B025354CB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>file</key>
+					<string>{query}</string>
+					<key>op</key>
+					<string>copy</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>2A42D6EB-7B74-4024-95B2-EB464C577F29</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2291,59 +2531,19 @@ function run([targetFolder]) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<integer>0</integer>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Copy2Here</string>
+				<key>externaltriggerid</key>
+				<string>notifier</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>61655438-45C9-48F4-907D-21EEFA1C8B90</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>op</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>AAFC9260-D994-44DB-B40E-D55C75A090DF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>file</key>
-					<string>{query}</string>
-					<key>op</key>
-					<string>copy</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>2A42D6EB-7B74-4024-95B2-EB464C577F29</string>
+			<string>E5FC9347-0830-4C22-950B-5D1D7A27AB0C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2353,7 +2553,7 @@ function run([targetFolder]) {
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>68</integer>
 				<key>script</key>
 				<string>ObjC.import('stdlib')
 
@@ -2363,37 +2563,52 @@ const file = $.getenv('file')
 const App = Application.currentApplication();
 App.includeStandardAdditions = true;
 
-const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
-let FinderPath;
-if (appName === "QSpace Pro") {
-    FinderPath = () =&gt; {
-        const QSpacePro = Application("QSpace Pro");
-        var selectedItemUrl;
-        var selectedItems = QSpacePro.selectedItems();
-        if (selectedItems.length &gt; 0) {
-            selectedItemUrl = selectedItems[0].urlstr();
-        } else {
-            selectedItemUrl = QSpacePro.rootItem.urlstr();
-        }
-        return decodeURIComponent(selectedItemUrl).slice(7);
-    };
-} else if (appName === "Finder") {
-    FinderPath = () =&gt;
-        decodeURI(
-            Application(appName)
-                .insertionLocation()
-                .url()
-                .replace(/^file:\/\//, '')
-        );
-} else {
-    throw new Error("You need put Finder or QSpace Pro as your frontmost app");
-}
 const ACTIONS = {
-  move: (file) =&gt; App.doShellScript(`mv "${file}" "${FinderPath()}"`),
-  copy: (file) =&gt; App.doShellScript(`cp "${file}" "${FinderPath()}"`),
+    move: (file) =&gt; {
+        App.doShellScript(`mv "${file}" "${FinderPath()}"`)
+        console.log(`mv "${file}" "${FinderPath()}"`)
+        return `mv "${file}" "${FinderPath()}"`
+    },
+    copy: (file) =&gt; {
+        App.doShellScript(`cp "${file}" "${FinderPath()}"`)
+        console.log(`cp "${file}" "${FinderPath()}"`)
+        return `cp "${file}" "${FinderPath()}"`
+    },
 };
 
-ACTIONS[op](file);</string>
+const appName = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+let FinderPath;
+
+if (appName !== "QSpace Pro" &amp;&amp; appName !== "Finder") {
+    "You need put Finder or QSpace Pro as your frontmost app"
+} else {
+    switch (appName) {
+        case "QSpace Pro":
+            FinderPath = () =&gt; {
+                const QSpacePro = Application(appName);
+                var selectedItemUrl;
+                var selectedItems = QSpacePro.selectedItems();
+                if (selectedItems.length &gt; 0) {
+                    selectedItemUrl = selectedItems[0].urlstr();
+                } else {
+                    selectedItemUrl = QSpacePro.rootItem.urlstr();
+                }
+                return decodeURIComponent(selectedItemUrl).slice(7);
+            };
+            break;
+        case "Finder":
+            FinderPath = () =&gt;
+                decodeURI(
+                    Application(appName)
+                        .insertionLocation()
+                        .url()
+                        .replace(/^file:\/\//, '')
+                );
+            break;
+    }
+
+    ACTIONS[op](file);
+}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2428,6 +2643,27 @@ ACTIONS[op](file);</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>json</key>
+				<string>{
+  "alfredworkflow" : {
+    "config" : {
+    },
+    "variables" : {
+      "op" : "{query}"
+    }
+  }
+}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.json</string>
+			<key>uid</key>
+			<string>C0320364-C637-4EED-B06D-E65900E865BE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -2444,6 +2680,19 @@ ACTIONS[op](file);</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>91CE7D70-E413-4692-BB78-A78B461CBA01</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2539,9 +2788,9 @@ https://github.com/cage1016/alfred-source2target</string>
 		<key>001BE5FB-9DBC-4866-BDB1-DC42D3B556EA</key>
 		<dict>
 			<key>xpos</key>
-			<real>595</real>
+			<real>440</real>
 			<key>ypos</key>
-			<real>1790</real>
+			<real>1830</real>
 		</dict>
 		<key>0029264A-B4F9-497A-B438-512976115187</key>
 		<dict>
@@ -2550,149 +2799,162 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>215</real>
 			<key>ypos</key>
-			<real>880</real>
-		</dict>
-		<key>00DF23E1-727D-4421-8700-5C5CC789FF33</key>
-		<dict>
-			<key>xpos</key>
-			<real>2130</real>
-			<key>ypos</key>
-			<real>1555</real>
+			<real>1040</real>
 		</dict>
 		<key>051510A8-3032-4D34-90A6-E1F51C1A5559</key>
 		<dict>
 			<key>note</key>
 			<string>Do action (copy/move/pasteboard)</string>
 			<key>xpos</key>
-			<real>1865</real>
+			<real>1915</real>
 			<key>ypos</key>
-			<real>1555</real>
+			<real>1715</real>
 		</dict>
 		<key>0D01D3C7-59E9-4520-9263-ADD3739ED73F</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>1340</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>730</real>
 		</dict>
 		<key>1115DA36-B74D-48AD-A795-9285B97D0453</key>
 		<dict>
 			<key>xpos</key>
 			<real>305</real>
 			<key>ypos</key>
-			<real>205</real>
+			<real>365</real>
 		</dict>
 		<key>11861E15-A756-4EE8-B4E8-83BD5978497B</key>
 		<dict>
 			<key>xpos</key>
 			<real>435</real>
 			<key>ypos</key>
-			<real>850</real>
+			<real>1010</real>
 		</dict>
 		<key>163B809F-B469-4796-88FD-2F336577CAE4</key>
 		<dict>
 			<key>xpos</key>
 			<real>660</real>
 			<key>ypos</key>
-			<real>1095</real>
+			<real>1255</real>
+		</dict>
+		<key>166FB457-82D6-41F1-BFBA-0B5B654137A9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>365</real>
+			<key>ypos</key>
+			<real>145</real>
 		</dict>
 		<key>2719A819-3FED-40CD-A321-0BA2D87E614C</key>
 		<dict>
 			<key>xpos</key>
 			<real>1330</real>
 			<key>ypos</key>
-			<real>1410</real>
+			<real>1570</real>
 		</dict>
 		<key>2A42D6EB-7B74-4024-95B2-EB464C577F29</key>
 		<dict>
 			<key>xpos</key>
 			<real>205</real>
 			<key>ypos</key>
-			<real>1710</real>
+			<real>1750</real>
+		</dict>
+		<key>2B03FB6C-B050-4E7B-9804-77CEF5AD3F3C</key>
+		<dict>
+			<key>xpos</key>
+			<real>365</real>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 		<key>2E379C96-91D2-4BD5-AE0B-D49FC45DC906</key>
 		<dict>
 			<key>xpos</key>
 			<real>1340</real>
 			<key>ypos</key>
-			<real>120</real>
+			<real>280</real>
 		</dict>
 		<key>2EB4A01C-C33D-4BF0-9D88-B2A8704E3EBB</key>
 		<dict>
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>465</real>
+			<real>625</real>
 		</dict>
 		<key>310F5A45-E71B-417A-95C1-7AF38636B5F7</key>
 		<dict>
 			<key>xpos</key>
 			<real>670</real>
 			<key>ypos</key>
-			<real>350</real>
+			<real>510</real>
 		</dict>
 		<key>34EC05A2-8452-4282-8317-6271DADC259F</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1790</real>
+			<real>1830</real>
+		</dict>
+		<key>3701E996-696A-46F9-845C-233B025354CB</key>
+		<dict>
+			<key>xpos</key>
+			<real>1815</real>
+			<key>ypos</key>
+			<real>1745</real>
 		</dict>
 		<key>37BC5BF7-E8F5-423A-80FC-3EB3FAB592AD</key>
 		<dict>
 			<key>xpos</key>
 			<real>1020</real>
 			<key>ypos</key>
-			<real>1540</real>
+			<real>1700</real>
 		</dict>
 		<key>3AC3AA29-BDEB-4A56-BD44-BACD3B0C1C95</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1090</real>
+			<real>1250</real>
 		</dict>
 		<key>3DBFE9BA-9E91-4B20-8A41-4A27566EFEE0</key>
 		<dict>
 			<key>xpos</key>
 			<real>215</real>
 			<key>ypos</key>
-			<real>765</real>
+			<real>925</real>
 		</dict>
 		<key>5B670AE8-C091-4976-9509-1D471E82DCFF</key>
 		<dict>
 			<key>xpos</key>
 			<real>670</real>
 			<key>ypos</key>
-			<real>1360</real>
-		</dict>
-		<key>5CBBCBC6-9247-49E9-9F79-10D409E0D89D</key>
-		<dict>
-			<key>xpos</key>
-			<real>1980</real>
-			<key>ypos</key>
-			<real>350</real>
+			<real>1520</real>
 		</dict>
 		<key>5D7DB7AD-9693-4268-B84D-B65A9FB54468</key>
 		<dict>
 			<key>xpos</key>
 			<real>1035</real>
 			<key>ypos</key>
-			<real>850</real>
+			<real>1010</real>
 		</dict>
 		<key>61655438-45C9-48F4-907D-21EEFA1C8B90</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1680</real>
+			<real>1720</real>
 		</dict>
 		<key>65B25B8D-C286-4333-973E-043722CED8FA</key>
 		<dict>
 			<key>xpos</key>
 			<real>680</real>
 			<key>ypos</key>
-			<real>575</real>
+			<real>735</real>
 		</dict>
 		<key>6DCD6282-DB37-4D3C-A243-69F1A02E75C7</key>
 		<dict>
@@ -2701,7 +2963,23 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>215</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>730</real>
+		</dict>
+		<key>793F795D-6810-4DC4-BFA6-A008465FFE48</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>2165</real>
+			<key>ypos</key>
+			<real>1715</real>
+		</dict>
+		<key>83E5E27F-D8F4-4B6C-B3C1-634D07D4D928</key>
+		<dict>
+			<key>xpos</key>
+			<real>2075</real>
+			<key>ypos</key>
+			<real>1745</real>
 		</dict>
 		<key>884ECC2F-AF23-4EA4-9BD9-C1F09AAB8E57</key>
 		<dict>
@@ -2710,28 +2988,51 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>480</real>
 		</dict>
 		<key>8CCDC812-E1DB-4C3B-9626-C02C241EDB69</key>
 		<dict>
 			<key>xpos</key>
-			<real>1675</real>
+			<real>1650</real>
 			<key>ypos</key>
-			<real>1555</real>
+			<real>1715</real>
+		</dict>
+		<key>8D016C4B-8051-4BEA-9981-18CEA4CEBE25</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>91CE7D70-E413-4692-BB78-A78B461CBA01</key>
+		<dict>
+			<key>xpos</key>
+			<real>625</real>
+			<key>ypos</key>
+			<real>1860</real>
 		</dict>
 		<key>92B4D644-0EE6-4FEA-A24B-9C07490CDE32</key>
 		<dict>
 			<key>xpos</key>
 			<real>1095</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>485</real>
+		</dict>
+		<key>936BEC39-B097-4D90-82DF-ED6D68BF6997</key>
+		<dict>
+			<key>xpos</key>
+			<real>1835</real>
+			<key>ypos</key>
+			<real>540</real>
 		</dict>
 		<key>9544CB85-C8C9-43A0-ABC1-A29729B0031C</key>
 		<dict>
 			<key>xpos</key>
 			<real>1340</real>
 			<key>ypos</key>
-			<real>270</real>
+			<real>430</real>
 		</dict>
 		<key>95F62E81-B8F6-483F-A951-60DC7FB45AAA</key>
 		<dict>
@@ -2740,14 +3041,14 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>450</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>730</real>
 		</dict>
 		<key>994BD2AD-0634-44E2-9299-5F3202BBDB1B</key>
 		<dict>
 			<key>xpos</key>
 			<real>490</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>630</real>
 		</dict>
 		<key>9E2AE6DB-0EA1-43F0-B543-8EEE8A5C0701</key>
 		<dict>
@@ -2756,7 +3057,7 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>1675</real>
 			<key>ypos</key>
-			<real>350</real>
+			<real>510</real>
 		</dict>
 		<key>A3C7ECF3-D0A7-4040-A187-FE6167403F0A</key>
 		<dict>
@@ -2765,7 +3066,7 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>145</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>470</real>
 		</dict>
 		<key>A4EF083E-2273-42D4-B7D7-FF37611F3165</key>
 		<dict>
@@ -2774,42 +3075,53 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>805</real>
 			<key>ypos</key>
-			<real>820</real>
+			<real>980</real>
 		</dict>
-		<key>AAFC9260-D994-44DB-B40E-D55C75A090DF</key>
+		<key>A65A07EB-6A70-492B-A77A-6991CAF6190E</key>
 		<dict>
 			<key>xpos</key>
-			<real>1505</real>
+			<real>240</real>
 			<key>ypos</key>
-			<real>1685</real>
+			<real>175</real>
 		</dict>
 		<key>AE63AEDC-1F17-4E8E-8DA0-B0AEDB3C8DB9</key>
 		<dict>
 			<key>xpos</key>
 			<real>1095</real>
 			<key>ypos</key>
-			<real>1530</real>
+			<real>1690</real>
 		</dict>
 		<key>B8631ECF-7764-490B-B56F-BB743A53787F</key>
 		<dict>
 			<key>xpos</key>
 			<real>810</real>
 			<key>ypos</key>
-			<real>1200</real>
+			<real>1360</real>
 		</dict>
-		<key>BA351FC1-095D-4F4B-92EB-39A46A799333</key>
+		<key>C0320364-C637-4EED-B06D-E65900E865BE</key>
 		<dict>
 			<key>xpos</key>
-			<real>2045</real>
+			<real>1520</real>
 			<key>ypos</key>
-			<real>1585</real>
+			<real>1845</real>
+		</dict>
+		<key>C3347219-5448-49D0-B8E9-76DE5683DB4F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>1925</real>
+			<key>ypos</key>
+			<real>510</real>
 		</dict>
 		<key>C8CE2451-D929-4B9E-B367-F775A89E8FFF</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>730</real>
 		</dict>
 		<key>D1DD877C-01B4-4C2B-81B9-E0C2BA9B648F</key>
 		<dict>
@@ -2818,21 +3130,23 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>475</real>
 			<key>ypos</key>
-			<real>1090</real>
+			<real>1250</real>
 		</dict>
 		<key>D2B7F723-C68F-4524-A0E6-26710E3D5EBD</key>
 		<dict>
 			<key>xpos</key>
 			<real>205</real>
 			<key>ypos</key>
-			<real>1820</real>
+			<real>1860</real>
 		</dict>
 		<key>D56A95D4-CD83-4857-8495-9CA626C6E67C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
 			<real>1335</real>
 			<key>ypos</key>
-			<real>1090</real>
+			<real>1250</real>
 		</dict>
 		<key>D668433F-4B81-433C-8D72-98F9B2DF6255</key>
 		<dict>
@@ -2841,28 +3155,37 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>145</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>335</real>
 		</dict>
 		<key>DA46895D-2285-41DC-A88F-ABA534CB32AF</key>
 		<dict>
 			<key>xpos</key>
 			<real>305</real>
 			<key>ypos</key>
-			<real>340</real>
+			<real>500</real>
 		</dict>
 		<key>DF929065-9427-4683-BBAA-49E0A5301194</key>
 		<dict>
 			<key>xpos</key>
 			<real>495</real>
 			<key>ypos</key>
-			<real>1315</real>
+			<real>1475</real>
 		</dict>
 		<key>E04C412B-486F-48B3-A294-820B47463374</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>765</real>
+			<real>925</real>
+		</dict>
+		<key>E11D8A4F-7750-45FC-93C5-6C01EF5FDB8D</key>
+		<dict>
+			<key>xpos</key>
+			<real>1510</real>
+			<key>ypos</key>
+			<real>460</real>
 		</dict>
 		<key>E2EE83F1-C42D-4491-A016-87C4D89B8BDE</key>
 		<dict>
@@ -2871,14 +3194,7 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>215</real>
 			<key>ypos</key>
-			<real>1090</real>
-		</dict>
-		<key>E4542FB7-F2C8-4D37-B6DD-E415ADA2C11C</key>
-		<dict>
-			<key>xpos</key>
-			<real>1405</real>
-			<key>ypos</key>
-			<real>440</real>
+			<real>1250</real>
 		</dict>
 		<key>E5F93105-B802-4A42-9C3A-60334249DF16</key>
 		<dict>
@@ -2887,56 +3203,58 @@ https://github.com/cage1016/alfred-source2target</string>
 			<key>xpos</key>
 			<real>810</real>
 			<key>ypos</key>
-			<real>1330</real>
+			<real>1490</real>
 		</dict>
-		<key>E9C9F889-8DB0-42CF-AD49-CDF91ED5A9FE</key>
+		<key>E5FC9347-0830-4C22-950B-5D1D7A27AB0C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<real>1860</real>
+			<real>730</real>
 			<key>ypos</key>
-			<real>460</real>
-		</dict>
-		<key>EAAD9F64-A369-449C-A3F2-6914FC6E606C</key>
-		<dict>
-			<key>xpos</key>
-			<real>1855</real>
-			<key>ypos</key>
-			<real>380</real>
+			<real>1830</real>
 		</dict>
 		<key>F1D1F453-7FB3-40D5-A2F9-630BFAA06454</key>
 		<dict>
 			<key>xpos</key>
 			<real>1010</real>
 			<key>ypos</key>
-			<real>350</real>
+			<real>510</real>
 		</dict>
 		<key>F45D01B5-AA73-49C4-9056-D986ED348AEC</key>
 		<dict>
 			<key>xpos</key>
 			<real>1330</real>
 			<key>ypos</key>
-			<real>1655</real>
+			<real>1815</real>
 		</dict>
 		<key>F6B9B1DD-451F-461F-A0FC-37A5C0D07DA7</key>
 		<dict>
 			<key>xpos</key>
 			<real>1100</real>
 			<key>ypos</key>
-			<real>1325</real>
+			<real>1490</real>
+		</dict>
+		<key>F6D21B2E-4F6B-4859-9092-8062312473EF</key>
+		<dict>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>65</real>
 		</dict>
 		<key>F7B82A83-59EB-4447-8570-F581854776D9</key>
 		<dict>
 			<key>xpos</key>
 			<real>1095</real>
 			<key>ypos</key>
-			<real>120</real>
+			<real>280</real>
 		</dict>
 		<key>FE9600BB-3F19-40FD-8FC9-5BEC39464060</key>
 		<dict>
 			<key>xpos</key>
 			<real>1160</real>
 			<key>ypos</key>
-			<real>840</real>
+			<real>1000</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
