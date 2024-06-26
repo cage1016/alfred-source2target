@@ -1284,7 +1284,7 @@ const ACTIONS = {
         pasteboard.clearContents;
         []
             .concat(files)
-            .forEach((f) =&gt; {                
+            .forEach((f) =&gt; {
                 pasteboard.writeObjects([
                     ObjC.unwrap($.NSURL.fileURLWithPath(`${BASE}/${f}`)),
                 ])
@@ -1318,16 +1318,38 @@ if (appName !== 'Finder' &amp;&amp; appName !== 'QSpace Pro') {
 } else {
     switch (appName) {
         case "QSpace Pro":
+            getFullFolderPath = (path) =&gt; {
+                // Import the necessary module
+                ObjC.import('Foundation');
+
+                // Convert the path to NSString
+                var nsPath = $(path);
+
+                // Create a file manager to check if the path is a directory
+                var fileManager = $.NSFileManager.defaultManager;
+                var isDirectory = Ref();
+
+                // Check if the path is a directory
+                fileManager.fileExistsAtPathIsDirectory(nsPath, isDirectory);
+
+                if (isDirectory[0]) {
+                    // If the path is a directory, return the path itself
+                    return ObjC.unwrap(nsPath);
+                } else {
+                    // If the path is a file, return the path of its parent directory
+                    var parentDirectory = nsPath.stringByDeletingLastPathComponent;
+                    return ObjC.unwrap(parentDirectory);
+                }
+            }
+
             FinderPath = () =&gt; {
-                const QSpacePro = Application(appName);
-                var selectedItemUrl;
+                const QSpacePro = Application("QSpace Pro");
                 var selectedItems = QSpacePro.selectedItems();
                 if (selectedItems.length &gt; 0) {
-                    selectedItemUrl = selectedItems[0].urlstr();
+                    return getFullFolderPath(decodeURIComponent(selectedItems[0].urlstr()).slice(7))
                 } else {
-                    selectedItemUrl = QSpacePro.rootItem.urlstr();
+                    return decodeURIComponent(QSpacePro.rootItem.urlstr()).slice(7)
                 }
-                return decodeURIComponent(selectedItemUrl).slice(7);
             };
             break;
         case "Finder":
@@ -2584,16 +2606,40 @@ if (appName !== "QSpace Pro" &amp;&amp; appName !== "Finder") {
 } else {
     switch (appName) {
         case "QSpace Pro":
+            getFullFolderPath = (path) =&gt; {
+                // Import the necessary module
+                ObjC.import('Foundation');
+
+                // Convert the path to NSString
+                var nsPath = $(path);
+
+                // Create a file manager to check if the path is a directory
+                var fileManager = $.NSFileManager.defaultManager;
+                var isDirectory = Ref();
+
+                // Check if the path is a directory
+                fileManager.fileExistsAtPathIsDirectory(nsPath, isDirectory);
+
+                if (isDirectory[0]) {
+                    // If the path is a directory, return the path itself
+                    return ObjC.unwrap(nsPath);
+                } else {
+                    // If the path is a file, return the path of its parent directory
+                    var parentDirectory = nsPath.stringByDeletingLastPathComponent;
+                    return ObjC.unwrap(parentDirectory);
+                }
+            }
+
             FinderPath = () =&gt; {
                 const QSpacePro = Application(appName);
                 var selectedItemUrl;
                 var selectedItems = QSpacePro.selectedItems();
                 if (selectedItems.length &gt; 0) {
-                    selectedItemUrl = selectedItems[0].urlstr();
+                    return getFullFolderPath(decodeURIComponent(selectedItems[0].urlstr()).slice(7))
                 } else {
                     selectedItemUrl = QSpacePro.rootItem.urlstr();
+                    return decodeURIComponent(selectedItemUrl).slice(7);
                 }
-                return decodeURIComponent(selectedItemUrl).slice(7);
             };
             break;
         case "Finder":
